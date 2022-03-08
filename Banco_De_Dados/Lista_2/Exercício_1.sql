@@ -24,6 +24,8 @@ UPDATE Atleta SET qtdMedalha = 3 WHERE idAtleta = 1;
 
 -- Atualizar a quantidade de medalhas do atleta com id=2 e com o id=3
 UPDATE Atleta SET qtdMedalha = 4 WHERE idAtleta in (2,3);
+-- OU 
+UPDATE Atleta SET qtdMedalha = 4 WHERE idAtleta = 2 or idAtleta = 3;
 
 -- Atualizar o nome do atleta com o id=4;
 UPDATE Atleta SET nome = 'Bernardo' WHERE idAtleta = 4;
