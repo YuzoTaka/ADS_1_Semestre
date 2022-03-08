@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 Exercício 09</title>
+</head>
+<body>
+    Quanto dinheiro terá em 6 meses
+    <br>
+    <input id="ipt_pouco">
+    <br><br>
+    Quanto dinheiro terá em 3 anos
+    <br>
+    <input id="ipt_muito">
+    <br><br><br>
+    <button onclick="botao()">Como estarei no futuro?</button>
+    <br><br><br>
+    <div id="pouco_dinheiro"></div>
+    <br>
+    <div id="muito_dinheiro"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function botao(){
+        pouco_dinheiro.innerHTML = `<img src="https://pm1.narvii.com/6311/0e314b58c6b0a75b6ef84640b33ba0bd875d1263_hq.jpg" style="height: 200px; width: 300px;"> R$${ipt_pouco.value}`
+
+
+        muito_dinheiro.innerHTML= `<img src="http://2.bp.blogspot.com/_F153qIH99qM/S9Gr1IfGY7I/AAAAAAAAAj8/sFTl43dA9Mo/s640/tio-patinhas.jpg" style="height: 250px; width: 300px;"> R$${ipt_muito.value}`
+
+
+
+    }
+
+
+
+
+
+</script>

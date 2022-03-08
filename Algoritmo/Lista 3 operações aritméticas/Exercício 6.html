@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <h1>Dragon Ball</h1>
+    <br>
+    Nome do guerreiro
+    <br>
+    <input id="ipt_nome">
+    <br><br>
+    Quantidade de Ki
+    <br>
+    <input id="ipt_qtdKi">
+    <br><br>
+    <button onclick="resposta()">Ver ki em cada forma</button>
+    <br><br><br>
+    <div id="div_sayajin1"></div>
+    <br>
+    <div id="div_sayajin2"></div>
+  
+</body>
+</html>
+
+<script>
+    function resposta(){
+        div_sayajin1.innerHTML = `O guerreiro ${ipt_nome.value} na forma Super Sayajin possui ${Number(ipt_qtdKi.value) * 50} de Ki`
+        div_sayajin2.innerHTML = `O guerreiro ${ipt_nome.value} na forma Super Sayajin 2 possui ${Number(ipt_qtdKi.value) * 100} de Ki`
+
+    }
+    
+</script>

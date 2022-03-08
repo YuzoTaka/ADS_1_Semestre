@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1 parte 2</title>
+</head>
+<body>
+    Digite sua idade
+    <br>
+    <input id="ipt_idade">
+    <br><br>
+    <button onclick="resposta()">Aposentadoria</button>
+    <br><br>
+    <div id="div_homem"></div>
+    <div id="div_mulher"></div>
+</body>
+</html>
+
+<script>
+    function resposta(){
+        div_homem.innerHTML = `<div style="color: green;">Se for <u>homem</u> faltam ${70 - Number(ipt_idade.value)} anos p/ aposentar.</div>`
+        div_mulher.innerHTML = `<div style="color: purple;">Se for <u>mulher</u> faltam ${60 - Number(ipt_idade.value)} anos p/ aposentar.</div>`
+
+    }
+
+
+
+
+</script>

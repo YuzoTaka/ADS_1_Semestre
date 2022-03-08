@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    Digite seu salário bruto
+    <input id="ipt_salario">
+    <br><br>
+    <button onclick="verdade()">A triste verdade</button>
+
+
+</body>
+</html>
+
+<script>
+    function verdade(){
+        var salario = ipt_salario.value
+        var INSS = (salario/10)
+        var IR = (salario/5)
+        var IS = (salario/30)
+
+    alert(`Apesar de seu bruto ser R$${salario}, após os descontos, você receberá somente R$${salario-INSS-IR-IS}`)
+
+    }
+
+</script>

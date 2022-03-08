@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Equipe Lantra</h1>
+    <br><br>
+    Valor da pizza
+    <br>
+    <input id="ipt_valor">
+    <br><br>
+    Quantidade de amigos
+    <br>
+    <input id="ipt_qtdAmigos">
+    <br><br><br>
+    <button onclick="resposta()">#lovePizza</button>
+
+</body>
+</html>
+
+<script>
+    function resposta(){
+        alert(`Cada um dos ${ipt_qtdAmigos.value} amigos vai pagar R$${Number(ipt_valor.value) / Number(ipt_qtdAmigos.value)}`);
+
+    }
+
+</script>

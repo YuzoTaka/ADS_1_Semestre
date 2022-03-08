@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    Digite seu salário bruto
+    <input id="ipt_salario">
+    <br><br>
+    <button onclick="verdade()">A triste verdade</button>
+    <br><br>
+    <div id="div_resposta"></div>
+    
+</body>
+</html>
+
+<script>
+    function verdade(){
+        var salario = ipt_salario.value
+        var INSS = (salario/10)
+        var IR = (salario/5)
+        var IS = (salario/30)
+
+    div_resposta.innerHTML = `<splan style="color: blue";>Apesar de seu bruto ser</splan> <splan style="color: green;"><b>R$${salario}</b></splan> <splan style="color: blue;">, após os descontos, você receberá somente </splan><splan style="color: red;"><b>R$${salario-INSS-IR-IS}</b></splan>`
+
+    }
+
+</script>

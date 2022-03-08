@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 exercício 06</title>
+</head>
+<body>
+    Digite sua nota
+    <br>
+    <input id="ipt_nota">
+    <br><br>
+    <button onclick="avo()">Opinião da avó</button>
+    <br>
+    <button onclick="mae()">Opinião da mãe</button>
+    <br><br><br>
+    <div id="div_resposta"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function avo(){
+        div_resposta.innerHTML= `Muito bem, que neto inteligente, porque tirou ${ipt_nota.value}!!!<br> <img src="https://img.freepik.com/vetores-gratis/feliz-cute-mulher-velha-com-saco_76775-183.jpg?size=338&ext=jpg" style="width: 250px; height: 250px;">`
+
+    }
+
+    function mae(){
+        div_resposta.innerHTML= `Não fez mais que tua obrigação com essa nota ${ipt_nota.value} !!!<br> <img src="https://thumbs.dreamstime.com/b/m%C3%A3e-ficando-brava-com-o-filho-menino-giro-chorando-repreendido-pela-clip-art-de-cria%C3%A7%C3%A3o-vetor-plano-isolado-em-branco-203850336.jpg" style="width: 250px; height: 250px">`
+
+    }
+
+
+</script>

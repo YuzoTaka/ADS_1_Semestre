@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Primeiro número
+    <br>
+    <input id="ipt_numero1">
+    <br><br>
+    Segundo número
+    <br>
+    <input id="ipt_numero2">
+    <br><br>
+    <button onclick="soma()">Soma</button>
+    <button onclick="subtracao()">Subtração</button>
+    <button onclick="produto()">Produto</button>
+    <button onclick="razao()">Razão</button>
+
+    <div id="div_soma"></div>
+    <div id="div_subtracao"></div>
+    <div id="div_produto"></div>
+    <div id="div_razao"></div>
+
+</body>
+</html>
+
+<script>
+    function soma(){
+        div_soma.innerHTML = `A soma entre ${ipt_numero1.value} e ${ipt_numero2.value} é ${Number(ipt_numero1.value) + Number(ipt_numero2.value)}`
+
+    }
+
+    function subtracao(){
+        div_subtracao.innerHTML = `A subtração entre ${ipt_numero1.value} e ${ipt_numero2.value} é ${Number(ipt_numero1.value) - Number(ipt_numero2.value)}`
+
+    }
+
+    function produto(){
+        div_produto.innerHTML = `O produto entre ${ipt_numero1.value} e ${ipt_numero2.value} é ${Number(ipt_numero1.value) * Number(ipt_numero2.value)}`
+
+    }
+
+    function razao(){
+        div_razao.innerHTML = `A razão entre ${ipt_numero1.value} e ${ipt_numero2.value} é ${Number(ipt_numero1.value) / Number(ipt_numero2.value)}`
+
+    }
+
+
+</script>

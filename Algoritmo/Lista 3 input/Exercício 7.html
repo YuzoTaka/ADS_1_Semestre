@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 exerício 07</title>
+</head>
+<body>
+    Digite o nome da rua, avenida ou vila
+    <br>
+    <input id="ipt_nome">
+    <br>
+    Digite o número da casa onde mora
+    <br>
+    <input id="ipt_numero">
+    <br><br><br>
+    <button onclick="resposta()">Onde eu moro</button>
+    <br><br><br>
+    <div id="div_resposta"></div>
+
+
+</body>
+</html>
+
+<script>
+    function resposta(){
+        div_resposta.innerHTML += `Seu logradouro é ${ipt_nome.value}<br>`
+        div_resposta.innerHTML += `O número do seu logradouro é ${ipt_numero.value}<br>`
+
+    }
+
+
+
+</script>
