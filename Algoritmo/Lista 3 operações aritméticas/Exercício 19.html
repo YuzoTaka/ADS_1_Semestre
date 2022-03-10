@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+    Digite seu salário
+    <br>
+    <input id="ipt_salario">
+    <br><br><br>
+    <button onclick="salario()">Confirmar salário</button>
+    <div id="div_salario"></div>
+    <br><br>
+    <button onclick="cem()">Pagar a conta de 100</button>
+    <div id="div_cem"></div>
+    <br><br>
+    <button onclick="cinco()">Pagar a conta de 500</button>
+    <div id="div_cinco"></div>
+    <br><br>
+    <button onclick="loteria()">Ganhar 2000 na loteria</button>
+    <div id="div_loteria"></div>
+
+
+</body>
+</html>
+
+<script>
+    function salario(){
+        var ax_salario = ipt_salario.value
+        div_salario.innerHTML = `Grana atual: R$${ax_salario}`
+
+    }
+    function cem(){
+        var ax_salario = ipt_salario.value
+        div_cem.innerHTML = `Grana atual: R$${ax_salario - 100}`
+
+    }
+    function cinco(){
+        var ax_salario = ipt_salario.value
+        div_cinco.innerHTML = `Grana atual: R$${ax_salario - 500}`
+
+    }
+    function loteria(){
+        var ax_salario = ipt_salario.value
+        div_loteria.innerHTML = `Grana atual: R$${Number(ax_salario) + 2000 }`
+        
+    }
+
+
+</script>

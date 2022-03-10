@@ -27,7 +27,8 @@
     function homem(){
         var peso = Number(ipt_peso.value)
         var altura = Number(ipt_altura.value)
-        div_homem.innerHTML = `Seu IMC é ${peso/(altura*altura)}`
+        var IMC = Number(peso/[altura*altura])
+        div_homem.innerHTML = `Seu IMC é ${IMC.toFixed(1)}`
 
 
     }
@@ -35,11 +36,11 @@
         var peso = Number(ipt_peso.value)
         var altura = Number(ipt_altura.value)
         var IMC = Number(peso/[altura*altura])
-        div_homem.innerHTML = `Seu IMC é ${IMC-(IMC/10)}`
+        var IMulherC = Number(IMC * 0.9)
+        div_homem.innerHTML = `Seu IMC é ${IMulherC.toFixed(1)}`
 
 
     }
 
 
-
-</script>
+ </script>

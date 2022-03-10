@@ -26,12 +26,16 @@
     <div id="div_resultado"></div>
 
 
-</body>
-</html>
+    </body>
+    </html>
 
-<script>
+    <script>
     function media(){
-    div_resultado.innerHTML = `A média de ${ipt_nome.value} será de ${Number(ipt_notaC.value * 0.4) + Number(ipt_notaS.value * 0.6)}`
+        var aluno = ipt_nome.value
+        var continuada = Number(ipt_notaC.value)
+        var semestral = Number(ipt_notaS.value)
+        var resposta = 
+        div_resultado.innerHTML = `<h2>A média de ${aluno} será de ${resposta.toFixed(1)} </h2>`
 
     }
 

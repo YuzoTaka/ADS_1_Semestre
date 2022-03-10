@@ -1,0 +1,28 @@
+
+Chave primária(Primary Key):
+A chave primária, ou Primary key (PK) é o identificador único de um registro na tabela. Pode ser constituída de um campo (chave simples) ou pela combinação de dois ou mais campos (chave composta), de tal maneira que não existam dois registros com o mesmo valor de chave primária.
+
+
+Chave estrangeira(forgein key):
+Chave estrangeira, ou Foreign Key (FK), ou ainda chave externa é a chave que permite a referência a registros oriundos de outras tabelas. Ou seja, é o campo ou conjunto de campos que compõem a chave primária de uma outra tabela.
+
+A utilização da chave estrangeira possibilita a implementação da integridade de dados diretamente no banco de dados, conhecida como integridade referencial.
+
+
+Valor null:
+O valor NULL serve para indicar que o valor da coluna ou da expressão não foi informado, pois significa ausência de valor. Esta definição de NULL é uma convenção adotada pela maioria dos bancos de dados.
+
+
+DDL(Data Definition Language ou Linguagem de Definição de Dados):
+Possui comandos que interagem com os objetos do banco.
+São comandos DDL - CREATE, ALTER e DROP
+
+
+DML(Data Manipulation Language ou Linguagem de Manipulação de Dados):
+Possui comandos qiue interagem com os dados dentro das tabelas.
+São comandos DML: INSERT, DELETE e UPDATE
+
+
+DCL(Data Control Language ou Linguagem de Controle de Dados):
+Serve para controlar a parte de segurança do banco de dados. (Dar e retirar permissões)
+São comandos DCL o GRANT, REVOKE E DENY.
