@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    Quantidade de ingressos de estudante vendidos:
+    <input id="ipt_estudante">
+    <br><br>
+    Quantidade de ingressos comum vendidos:
+    <input id="ipt_comum">
+    <br><br>
+    Valor do ingresso:
+    <input id="ipt_valor">
+    <br><br>
+    <button onclick="calcular()">Calcular a arrecadação</button>
+    <br><br><br>
+    <div id="div_arrecadacao"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var totalEst = ipt_estudante.value*(ipt_valor.value/2)
+        var totalComum = ipt_comum.value*ipt_valor.value
+        div_arrecadacao.innerHTML = `A arrecadação foi  de R$${totalEst+totalComum}`
+
+    }
+
+
+</script>
