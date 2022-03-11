@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+<body>
+   <h1>Desafio</h1>
+    <br><br>
+    <input id="ipt_termoI" placeholder="Primeiro termo"> <input id="ipt_razao" placeholder="Valor da razão">   <input id="ipt_termoF" placeholder="Ultimo termo">
+    <br><br>
+    <button onclick="pg()">Calcular PG</button>
+    <br><br><br>
+    <div id="div_resposta"></div>
+
+    
+
+
+</body>
+</html>
+
+<script>
+    function pg(){
+    var a1 = ipt_termoI.value
+    var n = ipt_termoF.value
+    var q = ipt_razao.value
+    div_resposta.innerHTML = `O resultado é ${a1*q**(n-1)}`
+    }
+
+</script>

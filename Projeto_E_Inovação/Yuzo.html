@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador financeiro</title>
+</head>
+<body>
+    <h1>Simulador Financeiro</h1>
+    <br><br>
+    Número médio de vagas ocupadas por dia
+    <input id="ipt_vagas">
+    <br><br>
+    Quanto tempo o veículo fica no estabelecimento
+    <input id="ipt_tempo">
+    <br><br>
+    Preço da hora
+    <input id="ipt_preco">
+    <br><br>
+    <button onclick="simular()">Simular</button>
+    <br><br><br>
+    <div id="div_dia"></div>
+    <div id="div_mes"></div>
+    <div id="div_ano"></div>
+</body>
+</html>
+    <script>
+        function simular(){
+            var vagas = ipt_vagas.value
+            var tempo = ipt_tempo.value
+            var preco = ipt_preco.value
+            var dia = vagas * tempo*preco
+            var mes = dia*30
+            div_dia.innerHTML = `<h3>Seu estabelecimento lucra bruto por dia <b>R$${dia.toFixed(2)}</b></h3>`
+            div_mes.innerHTML = `<h3>Seu estabelecimento lucra bruto por mês <b>R${mes.toFixed(2)}</b></h3>`
+            div_ano.innerHTML = `<h3>Seu estabelecimento lucra bruto por ano <b>R$${(mes*12).toFixed(2)}</b></h3>`
+    
+        }
+
+    </script>
