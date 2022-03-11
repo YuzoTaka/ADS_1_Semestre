@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h2>Simulador Financeiro Estacionamento.</h2> <br>
+   Quantidade de vagas no estabelecimento:
+   <input type="text" id="vaga"><br>
+   Horário de funcionamento:
+   <input type="text" id="tempo"> <br>
+   Preço por hora:
+   <input type="text" id="preco" ><br>
+   <button onclick="calcular()">Calcule</button>
+   <div id="resposta"></div>
+</body>
+</html>
+<script>
+    function calcular (){
+    var lugar = vaga.value;
+    var func = tempo.value;
+    var finan = preco.value;
+    resposta.innerHTML = `Seu lucro bruto é ${lugar * func * finan}`;
+    }
+</script>

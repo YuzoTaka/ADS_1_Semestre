@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    
+    <div>Total guardado no cofrinho:<b id="b_cofre">R$0,00</b></div>
+    <br>
+    <div>Depósitos efetuados: <b id="b_deposito">0</b></div>
+    <br>
+    <button onclick="cinquenta()">Depositar R$0,50</button>
+    <br><br>
+    <button onclick="dois()">Depositar R$2,00</button>
+
+
+</body>
+</html>
+
+<script>
+    var cofre = 0;
+    var deposito = 0;
+    function cinquenta(){
+        cofre += 0.5;
+        deposito ++;
+        b_cofre.innerHTML = `R$${cofre.toFixed(2)}`;     
+        b_deposito.innerHTML = `${deposito}`;
+
+    } 
+    function dois(){
+        cofre += 2;
+        deposito ++;
+        b_cofre.innerHTML = `R$${cofre.toFixed(2)}`;     
+        b_deposito.innerHTML = `${deposito}`;
+
+    } 
+
+
+
+</script>

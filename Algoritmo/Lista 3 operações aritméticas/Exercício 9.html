@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    A primeira torneira pingou por quantos minutos?
+    <input id="ipt_um">
+    <br>
+    A segunda torneira pingou por quantos minutos?
+    <input id="ipt_dois">
+    <br>
+    A terceira torneira pingou por quantos minutos?
+    <input id="ipt_tres">
+    <br><br>
+    <button onclick="calcular()">Descobrir desperdício</button>
+    <br><br><br>
+    <div id="div_total"></div>
+
+
+
+</body>
+</html>
+
+<script>
+    var um = Number(ipt_um.value)*15
+    var dois = Number(ipt_dois.value)*15
+    var tres = Number(ipt_tres.value)*15
+    function calcular(){
+        div_total.innerHTML = `Suas 3 torneiras, juntas, desperdiçaram ${um+dois+tres} litros de água`
+
+
+    }
+
+</script>
