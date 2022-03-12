@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>The Voice Global</h1>
+    <br><br>
+    <img src="https://i.pinimg.com/236x/e0/23/ce/e023ce964ebcdf137e974e8e721d2cc9.jpg" onclick="lisa()" style="height: 150px";>Votos: <b id="b_lisa">0</b>
+    <br><br>
+    <img src="https://preview.redd.it/ukhhosdbwwg81.jpg?auto=webp&s=5bdbe3d15659ec0306ab829386597d5fe2b9b47c" onclick="aimer()" style="height: 150px"> Votos: <b id="b_aimer">0</b>
+    <br><br>
+    Total de votos: <b id="b_total">0</b>
+
+
+</body>
+</html>
+
+<script>
+    var ax_lisa = 0;
+    var ax_aimer = 0;
+    var ax_total = 0;
+    function lisa(){
+        ax_lisa ++;
+        ax_total ++;
+        b_lisa.innerHTML = `${ax_lisa}`
+        b_total.innerHTML = `${ax_total}`
+
+    }
+    function aimer(){
+        ax_aimer ++;
+        ax_total ++;
+        b_aimer.innerHTML = `${ax_aimer}`
+        b_total.innerHTML = `${ax_total}`
+
+    }
+
+
+</script>

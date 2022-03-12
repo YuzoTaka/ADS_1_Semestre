@@ -8,10 +8,39 @@
 </head>
 <body>
     <h1>Mini Urna eletrônica</h1>
-
-
-
+    <br><br>
+    Votação na <u inputmode="">Praça é Nossa:</u> <b id="b_PN">0</b>
+    <br>
+    Votação no <u>Zorra Total:</u> <b id="b_ZT">0</b>
+    <br>
+    Total de votos: <b id="b_total">0</b>
+    <br><br><br>
+    <button onclick="PN()">Votar na Praça é Nossa</button>
+    <button onclick="ZT()">Votar na Zorra Total</button>
 
 
 </body>
 </html>
+
+<script>
+    var ax_PT = 0;
+    var ax_ZT = 0;
+    var ax_total = 0
+    function PN(){
+        ax_PT ++;
+        ax_total ++;
+        b_PN.innerHTML = `${ax_PT}`
+        b_total.innerHTML = `${ax_total}`
+
+    }
+
+    function ZT(){
+        ax_ZT ++;
+        ax_total ++;
+        b_ZT.innerHTML = `${ax_ZT}`
+        b_total.innerHTML = `${ax_total}`
+
+    }
+
+
+</script>
