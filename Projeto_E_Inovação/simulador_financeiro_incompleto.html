@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Heads</title>
+</head>
+<body>
+    <h1>Simulador Financeiro</h1>
+    <span>Quanto seu estacionamento custa por mês?</span><br>
+    <input id="ipt_aluguel" type="text" placeholder="Preço do aluguel por mês"><br><br>
+    <span>Quantas vagas tem o seu estacionamento?</span><br>
+    <input id="ipt_vagas" type="text"><br><br>
+    <span>Quanto você cobra por hora?</span><br>
+    <input id="ipt_preco" type="text"><br><br>
+    <span>Quantas horas seu estacionamento permanece aberto por dia?</span><br>
+    <input id="ipt_horas" type="text"><br><br>
+    <button onclick="calcular()">CALCULAR</button>
+    <div id="all_opt" style="display: none;">
+
+        <div>Você tem <span id="opt_vagas_vazias"></span> vagas, e seu lucro bruto é de <span id="opt_lucro_max"></span> por mês. Com nossa solução, seu lucro bruto máximo será de <span id="opt_lucro_max_solucao"></span> por mês.</div>
+
+        <div>Lucro líquido: <span id="opt_lucro_dono"></span>. Já com a nossa solução, seria de: <span id="opt_lucro_dono_solucao"></span></div><br>
+
+        <div>Lucro com base na ocupação do estacionamento (em %): 
+            <span id="opt_lucro_ocupacao"><br>
+                <div>
+                    100% = <span id="opt_100"></span><br>
+                    80% = <span id="opt_80"></span><br>
+                    50% = <span id="opt_50"></span><br>
+                    20% = <span id="opt_20"></span><br>
+                </div>
+            </span>
+        </div><br>
+        
+        <div>Lucro líquido com nossa solução:<br>Por mês <span id="opt_liq_mes"></span></div>
+
+        <div></div><br>
+
+    </div>
+</body>
+</html>
+<script>
+    function calcular() {
+    var aluguel = Number(ipt_aluguel.value)
+    var vagas = Number(ipt_vagas.value)
+    var preco = Number(ipt_preco.value)
+    var horas = Number(ipt_horas.value)
+    var lucro_max = preco * vagas * horas
+    var lucro_max_solucao = lucro_max*1.2
+    var lucro_medio
+    var conta = preco * vagas 
+        all_opt.style.display = "block";
+        opt_vagas_vazias.innerHTML = `${vagas}`
+        opt_lucro_dono.innerHTML = `R$ ${((lucro_max-aluguel)*30).toFixed(2)}`
+        opt_lucro_dono_solucao.innerHTML = `R$ ${(((lucro_max* 1.2)*30)-aluguel).toFixed(2)}`
+        opt_lucro_max.innerHTML = `R$ ${((lucro_max)*30).toFixed(2)}`
+        opt_lucro_max_solucao.innerHTML = `R$ ${((lucro_max*1.2)*30).toFixed(2)}`
+        opt_100.innerHTML = `R$ ${(lucro_max_solucao*30).toFixed(2)}`
+        opt_80.innerHTML = `R$ ${((lucro_max_solucao*0.8)*30).toFixed(2)}`
+        opt_50.innerHTML = `R$ ${((lucro_max_solucao*0.5)*30).toFixed(2)}`
+        opt_20.innerHTML = `R$ ${((lucro_max_solucao*0.2)*30).toFixed(2)}`
+        opt_liq_mes.innerHTML = `${((lucro_max_solucao-lucro_max)*30).toFixed(2)}`
+
+    }
+</script>
