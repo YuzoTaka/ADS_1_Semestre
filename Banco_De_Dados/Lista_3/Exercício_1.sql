@@ -27,3 +27,24 @@ INSERT INTO Pais(nome, capital) VALUES
 	('Alemanha', 'Berlim'),
 	('Brasil', 'Brasília'),
 	('Japão', 'Tokyo');
+    
+    -- Criar a chave estrangeira na tabela correspondente conforme modelagem;   
+ALTER TABLE Atleta ADD COLUMN fkPais INT;
+ALTER TABLE Atleta ADD FOREIGN KEY (fkPais) REFERENCES Pais (idPais);
+
+-- Atualizar o país de todos os atletas;
+UPDATE Atleta SET fkPais = 1 WHERE idAtleta = 1;
+UPDATE Atleta SET fkPais = 2 WHERE idAtleta = 2;
+UPDATE Atleta SET fkPais = 3 WHERE idAtleta = 3;
+UPDATE Atleta SET fkPais = 4 WHERE idAtleta = 4;
+UPDATE Atleta SET fkPais = 2 WHERE idAtleta = 5;
+
+-- Exibir os atletas e seu respectivo país;
+SELECT Atleta.nome, Pais.nome FROM Atleta JOIN Pais ON Pais.idPais = Atleta.fkPais;
+
+-- Exibir apenas o nome do atleta e o nome do respectivo país;
+
+SELECT Atleta.nome, Pais.nome FROM Atleta JOIN Pais ON Pais.idPais = Atleta.fkPais WHERE Pais.nome = 'Alemanha';
+
+-- Exibir os dados dos atletas, seus respectivos países, de uma determinada capital;
+SELECT Atleta.nome, Pais.nome FROM Atleta JOIN Pais ON Pais.idPais = Atleta.fkPais WHERE Pais.capital = 'Toronto';
