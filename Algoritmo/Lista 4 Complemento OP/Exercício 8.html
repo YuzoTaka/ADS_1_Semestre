@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    Quantidade de filhos com menos de 10 anos <input id="ipt_menosdez">
+    <br><br>
+    Quantidade de filhos com mais ou igual a 10 anos <input id="ipt_maisdez">
+    <br><br>
+    <button onclick="calcular()">Auxílio filho</button>
+    <br><br><br>
+    <div id="div_resposta"></div>
+
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var menos10 = Number(ipt_menosdez.value)
+        var mais10 = Number(ipt_maisdez.value)
+        var auxilio = (menos10*30)+(mais10*20)
+        div_resposta.innerHTML = `Você tem <b>${menos10}</b> filhos menores de 10 anos e <b>${mais10}</b> filhos a partir de 10 anos, logo, seu "Auxílio Filhos" será de <b>R$${auxilio}</b>`
+
+
+    }
+
+</script>

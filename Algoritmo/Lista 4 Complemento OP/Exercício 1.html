@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <br>
+    Digite um número<input id="ipt_numero">
+    <br><br>
+    <button onclick="calcular()">Ver Tabuada</button>
+    <br><br>
+    <div id="div_tabuada"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var numero = ipt_numero.value
+        div_tabuada.innerHTML = `${numero}x1=<b>${numero*1}</b><br>${numero}x2=<b>${numero*2}</b><br>${numero}x3=<b>${numero*3}</b><br>${numero}x4=<b>${numero*4}</b><br>${numero}x5=<b>${numero*5}</b><br>${numero}x6=<b>${numero*6}</b><br>${numero}x7=<b>${numero*7}</b><br>${numero}x8=<b>${numero*8}</b><br>${numero}x9=<b>${numero*9}</b><br>`
+
+    }
+</script>

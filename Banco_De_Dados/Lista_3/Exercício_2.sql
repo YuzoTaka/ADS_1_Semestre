@@ -51,7 +51,7 @@ SELECT Musica.*, Album.nome FROM Musica JOIN Album ON Album.idAlbum = Musica.fkA
 SELECT Musica.titulo, Album.nome FROM Musica JOIN Album ON Album.idALbum = fkAlbum;
 
 -- Exibir os dados das músicas e seu respectivo álbum, de um determinado tipo.
-SELECT Musica.*, Album.nome FROM Musica JOIN Album ON Album.idALbum = fkAlbum WHERE Album.nome = 'Sky';
+SELECT Musica.*, Album.nome FROM Musica JOIN Album ON Album.idALbum = fkAlbum WHERE Album.nome = 'físico';
 
 
 

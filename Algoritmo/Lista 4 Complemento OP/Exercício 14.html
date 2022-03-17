@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    Quantidade de votos em "Zé Buduia": <input id="ipt_ze">
+    <br><br>
+    Quantidade de votos em "Maria Bigodenha": <input id="ipt_maria">
+    <br><br>
+    Quantidade de votos em branco: <input id="ipt_branco">
+    <br><br>
+    Quantidade de votos nulo: <input id="ipt_nulo">
+    <br><br><br>
+    <button onclick="resultado()">Resultado da eleição</button>
+    <br><br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function resultado(){
+        var ze = Number(ipt_ze.value)
+        var maria = Number(ipt_maria.value)
+        var branco = Number(ipt_branco.value)
+        var nulo = Number(ipt_nulo.value)
+        var total = ze+maria+branco+nulo
+        var invalido = branco+nulo
+        var resulze = (ze/total)*100
+        var resulma = (maria/total)*100
+        var resulin = (invalido/total)*100
+        div_resposta.innerHTML = 
+            `Total de votos: <u>${total}</u><br><br>
+            Zé Ruela: ${resulze}% (${ze} votos)<br>
+            <div style="height: 20px; background-color: green; width: ${resulze}%;"></div><br>
+            Maria Bigodenha: ${resulma}% (${maria} votos)<br>
+            <div style="height: 20px; background-color: red; width: ${resulma}%;"></div><br>
+            Inválidos: ${resulin}% (${invalido} votos)<br>
+            <div style="height: 20px; background-color: gray; width: ${resulin}%;"></div>`    
+    }
+
+</script>

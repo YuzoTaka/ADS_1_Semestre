@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    Horas dormidas: <input id="ipt_horas">
+    <br><br>
+    <button onclick="calcular()">Calcular sono</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var horas = ipt_horas.value
+        var horasA = ipt_horas.value*0.05
+        var horasB = ipt_horas.value*0.45
+        var horasC = ipt_horas.value*0.3
+        var horasD = ipt_horas.value*0.2
+        div_resposta.innerHTML= `Ao dormir X horas, você dormiu:<br>
+        ${horasA} horas na <b>fase 1</b><br>
+        ${horasB} horas na <b>fase 2</b><br>
+        ${horasC} horas na <b>fase 3</b><br>
+        ${horasD} horas na <b>fase REM</b>`
+
+    }
+
+
+</script>
