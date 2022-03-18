@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 8</title>
+</head>
+<body>
+    <h2>Como está o meu estabelecimento?</h2>
+    <br><br>
+    <select id="sel_estrela">
+        <option value="1">⭐</option>
+        <option value="2">⭐⭐</option>
+        <option value="3">⭐⭐⭐</option>
+        <option value="4">⭐⭐⭐⭐</option>
+        <option value="5">⭐⭐⭐⭐⭐</option>
+    </select>
+    <br><br>
+    <button onclick="confirmar()">Confirmar avaliação</button>
+    <br><br>
+    <div>Média atual: <b id="b_atual">0</b> estrelas</div>
+    <br>
+    <div>Número de avaliações: <b id="b_ava">0</b></div>
+    <br><br><br>
+    
+
+    
+</body>
+</html>
+
+<script>
+    var estrela = 0;
+    var atual = 0;
+    var ava = 0;
+    function confirmar(){
+        var avaliacao = sel_estrela.value
+        ava ++;
+        estrela += Number(avaliacao)
+        var media = estrela/ava;
+        b_ava.innerHTML = `${ava}`
+        b_atual.innerHTML = `${media.toFixed(2)}`
+
+    }
+</script>
+

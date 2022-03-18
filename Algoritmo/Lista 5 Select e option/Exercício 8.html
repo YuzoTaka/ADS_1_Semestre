@@ -7,9 +7,31 @@
     <title>Exercício 8</title>
 </head>
 <body>
-    <h2>Como está o meu estabelecimento?</h2>
-
-
-    
+    <h1>Hobby</h1>
+    <br><br>
+    Qual hobby deseja praticar: 
+    <select id="id_hobby" onchange="hobby()">
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Dancer_With_Red_Dress_Emoji_400x400.png">Dança</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Virus_Emoji_400x400.png">Video Game</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Man_Bowing_Emoji_400x400.png">Assistir TV/streaming</option>
+        <option value="https://cdn.shopify.com/s/files/1/1061/1924/files/Sign_of_the_Horns_Emoji_400x400.png">Ouvir ROCK</option>
+    </select>
+    <br><br><br>
+    <img id="img_hobby" src=""> 
 </body>
 </html>
+
+
+
+<script>
+
+    var tamanho_imagem = 50;
+
+    function hobby(){
+        var hobby = id_hobby.value
+        img_hobby.src = hobby
+        tamanho_imagem += 10
+        img_hobby.style.width = `${tamanho_imagem}px`;
+    }
+
+</script>
