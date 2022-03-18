@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+</head>
+<body>
+    <br>
+    Valor guardado no cofrinho: <b id="b_cofre">R$ 0.00</b>
+    <br><br>
+    Digite o valor para depositar: <input id="ipt_deposito">
+    <br><br>
+    <button onclick="depositar()">Depositar</button>
+    <br><br>
+    <button onclick="zerar()">Zerar a grana</button>
+
+
+</body>
+</html>
+
+<script>
+    var cofre = 0;
+    
+    function depositar(){
+        cofre += Number(ipt_deposito.value);
+        b_cofre.innerHTML = `R$ ${cofre.toFixed(2)}`
+
+    }
+    function zerar(){
+        cofre = 0;
+        b_cofre.innerHTML = `R$ ${cofre.toFixed(2)}`
+
+    }
+
+
+</script>

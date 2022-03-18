@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste lista 5</title>
+</head>
+<body>
+    <select id="sel_alfa">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="O">O</option>
+
+
+    </select>
+
+    <button onclick="alfabeto()">Alfabeto</button>
+
+    <div id="div_alfabeto"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function alfabeto(){
+        var ax_alfabeto = sel_alfa.value
+        div_alfabeto.innerHTML += `${ax_alfabeto}<br>`
+
+    }
+
+
+</script>

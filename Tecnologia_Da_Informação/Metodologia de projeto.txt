@@ -1,0 +1,14 @@
+1- WaterFall: Metodologia sequencial, de cima para baixo, simulando uma cascata. Utilizada em projetos com um escopo bem definidos e uma maior rigidez na execução, ou seja, só é possível seguir com o processo quando todos os processos anteriores já estiverem sido concluídas. Pouco recomendada, pois há pouca margem de alteração de última hora.
+
+2- Lean: Uma metodologia que utiliza-se apenas o necessário para execução de um projeto, reduzindo os custos e mitigação de desperdício, então há uma maior agilidade para realizar o projeto. É possível integrar esse método com o Kanban, que serve para organizar visualmente as tarefas a fazer, em progresso e concluído por meio de cards(igual o trello).
+
+3- Extreme Programming: Uma metodologia que tem a funcionalidade de reduzir os custos e maior agilidade nas entregas, esse métodos são divididos em pequenas entregas que garantem um feedback que contribuem para a entrega final, então garante uma maior segurança de que o cliente está satisfeito com a entrega.
+
+4- Scrum: Uma metodologia que divide o projeto em ciclos menores com entregas incrementais, e possui 3 princípios básicos:
+-Transparência: Todos os envolvidos no projeto devem estar alinhados com os requisitos de entrega e status dos ciclos;
+-Inspeção: Tudo realizado do projeto deve ser inspecionado e acompanhado de perto;
+-Adaptação: O projeto pode passar por alterações durante sua execução.
+
+5- Kanban: Metodologia baseada no trello, utilizando cards e etiquetas
+
+6- PrInCe2: Uma metodologia conhecida pela sua flexibilidade. Utilizada em projetos de criação e desenvolvimento de alguns produtos que não podem atrasar na entrega final, datas especiais(dia das mães, natal, etc) por exemplo, que tem um prazo bem específico a ser entregue. Para que o atraso não ocorra o processo deve ter todas as entradas e saídas do projeto bem definidas e acompanhadas de perto pelo gestor do projeto. 

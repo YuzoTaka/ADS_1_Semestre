@@ -8,13 +8,19 @@
 </head>
 <body>
     <br>
+    Digite o valor para depositar: <input id="ipt_deposito">
+    <br><br>
     Valor guardado no cofrinho: <b id="b_cofre">R$ 0.00</b>
     <br><br>
-    Digite o valor para depositar: <input id="ipt_deposito">
+    Quantidade de depósitos feitos: <b id="b_dpfeito">0</b>
+    <br><br>
+    Quantidade de retiradas feitas: <b id="b_rtfeito">0</b>
+    <br><br>
+    Valor médio dos Depósitos: <b id="b_vadep">R$ 0.00</b>
     <br><br>
     <button onclick="depositar()">Depositar</button>
     <br><br>
-    <button onclick="zerar()">Zerar a grana</button>
+    <button onclick="sacar()">Sacar o dinheiro</button>
 
 
 </body>
@@ -22,11 +28,28 @@
 
 <script>
     var cofre = 0;
+    var dpfeito = 0;
+    var rtfeito = 0;
+    var vadep = 0;
     
     function depositar(){
         cofre += Number(ipt_deposito.value);
+        dpfeito ++
         b_cofre.innerHTML = `R$ ${cofre.toFixed(2)}`
+        b_dpfeito.innerHTML = `${dpfeito}`
+        b_vadep.innerHTML = `R$ ${cofre.toFixed(2)}`
 
+
+    }
+    function sacar(){
+        cofre = 0;
+        dpfeito = 0;
+        
+        rtfeito ++;
+        b_cofre.innerHTML = `R$ ${cofre.toFixed(2)}`
+        b_rtfeito.innerHTML = `${rtfeito}`
+        b_dpfeito.innerHTML = `${dpfeito}`
+        b_vadep.innerHTML = `${cofre.toFixed(2)}`
 
     }
 

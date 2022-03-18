@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>Tabuada educativa</h1>
+    <br><br>
+    <select id="sel_primeiro" onclick="valor1()">
+        <option value="2">Tabuada do 2</option>
+        <option value="3">Tabuada do 3</option>
+        <option value="4">Tabuada do 4</option>
+        <option value="5">Tabuada do 5</option>
+        <option value="6">Tabuada do 6</option>
+        <option value="7">Tabuada do 7</option>
+        <option value="8">Tabuada do 8</option>
+        <option value="9">Tabuada do 9</option>
+    </select>
+    <br><br><br>
+    <div id="div_resposta"></div>
+</body>
+</html>
+
+<script>
+    
+    function valor1(){
+        var ax_valor = sel_primeiro.value
+        div_resposta.innerHTML = `${ax_valor} x 1 = <b>${ax_valor*1}</b><br>${ax_valor} x 2 = <b>${ax_valor*2}</b><br>${ax_valor} x 3 = <b>${ax_valor*3}</b><br>${ax_valor} x 4 = <b>${ax_valor*4}</b><br>${ax_valor} x 5 = <b>${ax_valor*5}</b><br>${ax_valor} x 6 = <b>${ax_valor*6}</b><br>${ax_valor} x 7 = <b>${ax_valor*7}</b><br>${ax_valor} x 8 = <b>${ax_valor*8}</b><br>${ax_valor} x 9 = <b>${ax_valor*9}</b>`
+
+
+    }
+
+
+
+</script>
+
