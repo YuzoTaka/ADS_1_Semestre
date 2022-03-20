@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    <h1>Simulador de cofrinho</h1>
+    <br><br>
+    <select id="sel_moedas">
+        <option value="1.00">1.00</option>
+        <option value="0.50">0.50</option>
+        <option value="0.25">0.25</option>
+        <option value="0.10">0.10</option>
+        <option value="0.05">0.05</option>
+    </select>
+    <br><br><br>
+    <div>O saldo do cofrinho é de: R$ <b id="div_saldo">0.00</b></div>
+    <br><br>
+    <div>A quantidade de operações foi: <b id="div_op">0</b></div>
+    <br><br>
+    <div>Média dos depósitos: R$ <b id="div_dep">0,00</b></div>
+    <br><br><br>
+    <button onclick="depositar()">Depositar</button>
+    <br><br>
+    <button onclick="gastar()">Gastar a grana</button>
+
+
+</body>
+</html>
+
+<script>
+    var saldo = 0;
+    var op = 0;
+    var dep = 0;
+    function depositar(){
+        var valor_moeda = sel_moedas.value; 
+        saldo += Number(valor_moeda); 
+        dep ++;
+        div_saldo.innerHTML = `${saldo.toFixed(2)}`
+        div_dep.innerHTML = `${saldo.toFixed(2)}`
+        div_op.innerHTML = `${dep}`
+
+    }
+    function gastar(){
+        saldo = 0;
+        op = 0;
+        dep = 0;
+        div_saldo.innerHTML = `${saldo.toFixed(2)}`
+        div_dep.innerHTML = `${saldo.toFixed(2)}`
+        div_op.innerHTML = `${dep}`
+
+    }
+    
+
+</script>

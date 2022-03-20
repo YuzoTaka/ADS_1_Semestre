@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Bhaskara</title>
+</head>
+<body>
+    <h1>Calculadora de Bhaskara</h1>
+    <br><br><br>
+    Valor de a: <input id="id_a">
+    <br><br>
+    Valor de b: <input id="id_b">
+    <br><br>
+    Valor de c: <input id="id_c">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+    <div id="div_positivo"></div>
+    <br><br>
+    <div id="div_negativo"></div>
+    <br><br>
+    <div id="div_delta"></div>
+
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var a = id_a.value
+        var b = id_b.value
+        var c = id_c.value
+        var delta = b**2-4*a*c
+        div_positivo.innerHTML = `x- =  ${(-b+(delta**-1/2))/2*1}`
+        div_negativo.innerHTML = `x+ =  ${(-b-(delta**-1/2))/2*1}`
+        div_delta.innerHTML = `delta =  ${delta}`
+    }
+
+</script>

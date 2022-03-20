@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Pizzaria Frizza</h1>
+    <br><br>
+    Sabor da pizza: 
+    <select id="sel_sabor">
+        <option value="23.00">Muçarela</option>
+        <option value="24.00">Calabresa</option>
+        <option value="26.00">Atum</option>
+        <option value="30.00">Portugues</option>
+    </select>
+    <br><br>
+    Incremento da pizza: 
+    <select id="sel_in1">
+        <option value="2.00">Queijo</option>
+        <option value="2.50">Presunto</option>
+        <option value="1.50">Ovo</option>
+        <option value="4.00">Palmito</option>
+        <option value="3.50">Frango</option>
+        <option value="3.00">Catupiry</option>
+    </select>
+    <select id="sel_in2">
+        <option value="2.00">Queijo</option>
+        <option value="2.50">Presunto</option>
+        <option value="1.50">Ovo</option>
+        <option value="4.00">Palmito</option>
+        <option value="3.50">Frango</option>
+        <option value="3.00">Catupiry</option>
+    </select>
+    <select id="sel_in3">
+        <option value="2.00">Queijo</option>
+        <option value="2.50">Presunto</option>
+        <option value="1.50">Ovo</option>
+        <option value="4.00">Palmito</option>
+        <option value="3.50">Frango</option>
+        <option value="3.00">Catupiry</option>
+    </select>
+    <br><br><br>
+    <button onclick="calcular()">Calcular preço da pizza</button>
+    <br><br>
+    <div id="div_resultado"></div>
+
+
+
+</body>
+</html>
+
+<script>
+    var pizza = 0;
+    var acre1 = 0;
+    var acre2 = 0;
+    var acre3 = 0;
+    var tot = 0;
+
+    function calcular(){
+    var pizza_sabor = Number(sel_sabor.value);
+    var incre1 = Number(sel_in1.value);
+    var incre2 = Number(sel_in2.value);
+    var incre3 = Number(sel_in3.value);
+    div_resultado.innerHTML = `A pizza era R$ <b>${pizza_sabor.toFixed(2)}</b>, mas foi acrescido R$ ${incre1.toFixed(2)},  R$ ${incre2.toFixed(2)} e R$ ${incre3.toFixed(2)} custará um total de R$ <u>${(pizza_sabor+incre1+incre2+incre3).toFixed(2)}</u>`
+
+    }
+
+
+</script>
