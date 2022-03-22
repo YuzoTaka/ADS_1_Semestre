@@ -31,14 +31,39 @@ INSERT INTO Runeterra(regiao) VALUES
 
 INSERT INTO Campeao(nome, funcao) VALUES
 ('Aatrox', 'lutador'),
-('Ahri', 'mago, assassino'),
+('Ahri', 'mago'),
 ('Akali', 'assassino'),
 ('Akshan', 'atirador'),
-('Alistar', 'taque, suporte');
+('Alistar', 'suporte'),
+('Amumu', 'Tanque'),
+('Anivia', 'Mago'),
+('Aphelios', 'Atirador'),
+('Azir', 'Mago'),
+('Braum', 'Suporte'),
+('Darius', 'Lutador'),
+('Camille', 'Lutador'),
+('Gnar', 'Lutador'),
+('Ekko', 'Mago'),
+('Irelia', 'Lutador'),
+('Jayce', 'Lutador'),
+('Jinx', 'Atirador'),
+('Katarina', 'Assassino'),
+('LeBlanc', 'Assassino'),
+('Yasuo', 'Lutador'),
+('Yone', 'Lutador'),
+('Zed', 'Assassino'),
+('Zeri', 'Atirador');
+
+ALTER TABLE Campeao ADD COLUMN fkRegiao INT;
+ALTER TABLE Campeao ADD FOREIGN KEY (fkRegiao) REFERENCES Runeterra(idRuneterra);
 
 
 
 SELECT * FROM Runeterra;
+SELECT * FROM Campeao;
+
+DESC Campeao;
+
 
     
     

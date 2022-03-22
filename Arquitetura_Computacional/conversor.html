@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor TOP
+    </title>
+</head>
+<body>
+    <center>
+    <h1>Conversor TOP</h1>
+    <br><br>
+    Número decimal
+    <br>
+    <input id="ipt_decimal" placeholder="Digite o número decimal">
+    <br><br><br>
+    <button onclick="resposta()">Converter</button>
+    <br><br>
+    <div id="div_octal"></div>
+    <div id="div_hexa"></div>
+    <div id="div_bin"></div>
+
+
+    </center>
+</body>
+</html>
+
+<script>
+
+    function resposta(){
+        var decimal = Number(ipt_decimal.value)
+
+        let octal = decimal.toString(8);
+
+        let hexadecimal = decimal.toString(16);
+
+        let binaria = decimal.toString(2);
+
+            console.log (decimal);
+            console.log (octal);
+            console.log (hexadecimal);
+            console.log (binaria);
+
+            document.getElementById("div_octal").innerHTML = `Octal=  <b>${octal}</b>`;
+            document.getElementById("div_hexa").innerHTML = `Hexadecimal= <b>${hexadecimal}</b>`;
+            document.getElementById("div_bin").innerHTML = `Binário= <b>${binaria}</b>`;
+
+    }
+
+</script>
