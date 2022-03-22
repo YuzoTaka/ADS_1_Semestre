@@ -31,20 +31,17 @@
     function resposta(){
         var decimal = Number(ipt_decimal.value)
 
-        let octal = decimal.toString(8);
+        var octal = decimal.toString(8);
 
-        let hexadecimal = decimal.toString(16);
+        var hexadecimal = decimal.toString(16);
 
-        let binaria = decimal.toString(2);
+        var binaria = decimal.toString(2);
 
-            console.log (decimal);
-            console.log (octal);
-            console.log (hexadecimal);
-            console.log (binaria);
 
-            document.getElementById("div_octal").innerHTML = `Octal=  <b>${octal}</b>`;
-            document.getElementById("div_hexa").innerHTML = `Hexadecimal= <b>${hexadecimal}</b>`;
-            document.getElementById("div_bin").innerHTML = `Binário= <b>${binaria}</b>`;
+
+            div_octal.innerHTML = `Octal=  <b>${octal}</b>`;
+            div_hexa.innerHTML = `Hexadecimal= <b>${hexadecimal}</b>`;
+            div_bin.innerHTML = `Binário= <b>${binaria}</b>`;
 
     }
 
