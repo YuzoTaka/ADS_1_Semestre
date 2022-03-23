@@ -1,4 +1,4 @@
-CREATE DATABASE Runeterra;
+CREATE DATABASE Runeterra; 
 
 USE Runeterra;
 
@@ -57,11 +57,11 @@ INSERT INTO Campeao(nome, funcao) VALUES
 ALTER TABLE Campeao ADD COLUMN fkRegiao INT;
 ALTER TABLE Campeao ADD FOREIGN KEY (fkRegiao) REFERENCES Runeterra(idRuneterra);
 
-UPDATE Campeao SET fkRegiao = 14 WHERE idCampeao = 1;
+UPDATE Campeao SET fkRegiao = 11 WHERE idCampeao = 1;
 UPDATE Campeao SET fkRegiao = 2 WHERE idCampeao = 2;
 UPDATE Campeao SET fkRegiao = 2 WHERE idCampeao = 3;
 UPDATE Campeao SET fkRegiao = 12 WHERE idCampeao = 4;
-UPDATE Campeao SET fkRegiao = 14 WHERE idCampeao = 5;
+UPDATE Campeao SET fkRegiao = 11 WHERE idCampeao = 5;
 UPDATE Campeao SET fkRegiao = 12 WHERE idCampeao = 6;
 UPDATE Campeao SET fkRegiao = 9 WHERE idCampeao = 7;
 UPDATE Campeao SET fkRegiao = 11 WHERE idCampeao = 8;
@@ -82,9 +82,9 @@ UPDATE Campeao SET fkRegiao = 2 WHERE idCampeao = 22;
 UPDATE Campeao SET fkRegiao = 6 WHERE idCampeao = 23;
 
 
-SELECT Campeao.nome, Runeterra.regiao FROM Campeao JOIN Runeterra ON Runeterra.idRuneterra = Campeao.idCampeao;
+SELECT Campeao.nome, Runeterra.regiao FROM Campeao JOIN Runeterra ON Runeterra.idRuneterra = Campeao.fkRegiao order by idCampeao;
 
-SELECT Campeao.*, Runeterra.regiao FROM Campeao JOIN Runeterra ON Runeterra.idRuneterra = Campeao.idCampeao;
+SELECT Campeao.idCampeao, Runeterra.regiao FROM Campeao JOIN Runeterra ON Runeterra.idRuneterra = Campeao.idCampeao;
 
 SELECT Campeao.nome, Campeao.funcao, Runeterra.regiao FROM Campeao JOIN Runeterra ON Runeterra.idRuneterra = Campeao.idCampeao WHERE funcao = 'mago';
 

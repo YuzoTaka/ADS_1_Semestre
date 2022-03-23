@@ -51,5 +51,15 @@ REFERENCES Empresa (idEmpresa);
 
 SELECT aluno.nome, empresa.nome FROM aluno
 	JOIN empresa ON empresa.idEmpresa = aluno.fkEmpresa;
+
+
+-- CRIAR TABELA COM A FK
+
+CREATE TABLE teste(
+    idTeste INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45),
+    fkTeste INT,
+    FOREIGN KEY (fkTeste) REFERENCES tabela(idTabela)
+);
     
     
