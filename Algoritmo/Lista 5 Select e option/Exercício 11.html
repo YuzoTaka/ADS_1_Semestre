@@ -40,7 +40,7 @@
         saldo += Number(valor_moeda); 
         dep ++;
         div_saldo.innerHTML = `${saldo.toFixed(2)}`
-        div_dep.innerHTML = `${saldo.toFixed(2)}`
+        div_dep.innerHTML = `${(saldo/dep).toFixed(2)}`
         div_op.innerHTML = `${dep}`
 
     }

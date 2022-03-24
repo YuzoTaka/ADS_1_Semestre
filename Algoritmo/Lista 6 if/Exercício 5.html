@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>Cidade Petrópolis</h1>
+    <br><br>
+    quantidade de kWh por dia: <input id="ipt_kwh">
+    <br><br>
+    <button onclick="calcular()">Calcular conta de luz</button>
+
+
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var kwh = ipt_kwh.value
+        var conta = kwh*0.85
+        var contaMes = conta*30
+        if(contaMes<100){
+            contaMes *= 0.9
+        }
+        alert(`Sua conta de luz custa R$ ${contaMes.toFixed(2)}`)
+        
+    }
+</script>

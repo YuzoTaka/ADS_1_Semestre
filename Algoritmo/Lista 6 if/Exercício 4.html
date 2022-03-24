@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>Rolezinho Fellas</h1>
+    <br><br>
+    Valor da pizza: <input id="ipt_pizza">
+    <br><br>
+    Quantidade de amigos: <input id="ipt_amigos">
+    <br><br>
+    <button onclick="resposta()">Rola a pizza?</button>
+    <br><br>
+    <div id="div_rolou"></div>
+    <br><br>
+    <div id="div_naorolou"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function resposta(){
+        var valPizza = ipt_pizza.value
+        var qtdAmigos = ipt_amigos.value
+        var media = valPizza/qtdAmigos
+        div_rolou.innerHTML = `Cada amigo vai pagar <b>R$ ${media.toFixed(2)}</b> pela pizza`
+        if(media>20){
+            div_naorolou.innerHTML = `Deu ruim! Pizza muito cara!!`
+        }
+    }
+</script>
