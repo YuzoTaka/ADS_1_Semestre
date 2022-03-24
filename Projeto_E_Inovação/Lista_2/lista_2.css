@@ -1,0 +1,44 @@
+#div1_1{
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    border: 2px solid green;
+    margin-top: 100px;
+}
+
+#div1_2{
+    background-color: black;
+    height: 50vh;
+    width: 25px;
+    border: 10px dashed red;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+#div2_1{
+    background-color: rgb(230, 127, 230);
+    height: 250px;
+    width: 100%;
+    display: flex;
+    padding-top: 125px;
+    padding-bottom: 125px;
+    padding-left: 50%;
+
+}
+
+#div2_2{
+    background-color: rgb(255, 194, 204);
+    height: 100%;
+    width: 250px;
+    border: 5px dashed red;
+}
+
+#div2_3{
+    background-color: rgb(4, 255, 213);
+    height: 88%;
+    width: 30%;
+}
+
+body1{
+    background-color: lightgray;
+}

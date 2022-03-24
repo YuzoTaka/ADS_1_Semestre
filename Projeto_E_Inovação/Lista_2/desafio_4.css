@@ -1,0 +1,21 @@
+#div1{
+    background-color: rgb(150, 70, 70);
+    border: 10px solid black;
+    height: 200px;
+    width: 700px;
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 50px;
+}
+
+#div2{
+    background-color: white;
+    color: blue;
+    border: 10px solid darkblue;
+    height: 150px;
+    width: 600px;
+    text-align: center;
+
+    
+}

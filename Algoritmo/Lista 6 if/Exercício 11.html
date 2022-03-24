@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+<body>
+    Valor do saldo na conta do banco: <input id="ipt_saldo">
+    <br><br>
+    <button onclick="verificar()">Verificar finanças</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var saldo = ipt_saldo.value
+        if(saldo==0){
+            div_resposta.innerHTML = `Conta zerada`
+        }
+        if(saldo<0){
+            div_resposta.innerHTML = `Está devendo!!`
+        }
+        if(saldo>0){
+            div_resposta.innerHTML = `Saldo Positivo! :)`
+        }
+    }
+</script>

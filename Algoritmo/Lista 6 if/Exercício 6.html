@@ -15,7 +15,7 @@
     <br><br>
     <button onclick="verificar()">Verificar financiamento</button>
     <br><br>
-    <div id="div_resposta"></div>
+    <div id="div_resposta" style="color: red;"></div>
 
 
 </body>
@@ -26,6 +26,8 @@
         var renda = ipt_renda.value
         var prestacao = ipt_prest.value
         var conta = (renda/prestacao)*100
-        if (conta>30)
+        if (conta>30){
+            div_resposta.innerHTML = `<b>Será necessário complementar a renda familiar</b>`
+        }
     }
 </script>
