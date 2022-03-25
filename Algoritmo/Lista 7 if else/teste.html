@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste CNH</title>
+</head>
+<body>
+    <h1>CNH</h1>
+    <br><br>
+    Quantidade de pontos da CNH: <input id="ipt_qtdPontos">
+    <br><br>
+    <button onclick="calcular()">Calcular multa</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var qtdPontos = Number(ipt_qtdPontos.value);
+        var multa = 0;
+        if(qtdPontos>=20){
+            multa = qtdPontos*87
+            alert(`Você está com a CNH suspensa`)
+        } else {
+            multa = qtdPontos*78
+        }
+        div_resposta.innerHTML = `O valor total da sua multa  é de R$ ${multa}`;
+        
+    }
+
+</script>

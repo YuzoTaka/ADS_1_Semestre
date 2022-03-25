@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elevador inteligente</h1>
+    <br><br>
+    Digite peso total:
+    <br>
+    <input id="ipt_peso">
+    <br><br>
+    <button onclick="ligar()">Ligar elevador</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function ligar(){
+        var pesoTotal = Number(ipt_peso.value)
+        if(pesoTotal<500){
+            div_resposta.innerHTML = `Elevador vai se mover`
+        }
+        if(pesoTotal>=500){
+            div_resposta.innerHTML = `Alguém precisa descer do elevador`
+        }
+    }
+</script>

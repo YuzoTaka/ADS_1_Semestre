@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Elevador TOP</h1>
+    <br><br>
+    Quantidade de homem:
+    <br>
+    <input id="ipt_homem">
+    <br><br>
+    Quantidade de mulher:
+    <br>
+    <input id="ipt_mulher">
+    <br><br>
+    <button onclick="analisar()">Analisar peso</button>
+    <br><br>
+    <div id="div_resposta"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var homem = Number(ipt_homem.value)
+        var mulher = Number(ipt_mulher.value)
+        var pesoHomem = homem*80
+        var pesoMulher = mulher*60
+        var total = pesoHomem+pesoMulher
+        if(total>800){
+            div_resposta.innerHTML = `Será necessário descer alguém para que o elevador se movimente`
+        }
+        if(total<=800){
+            div_resposta.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${total.toFixed(2)}kg`
+        }
+    }
+</script>

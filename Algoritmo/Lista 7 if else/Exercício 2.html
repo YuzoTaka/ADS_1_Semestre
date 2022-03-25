@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Banco Itado</h1>
+    <br><br>
+    Digite o saldo da conta: <input id="ipt_saldo">
+    <br><br>
+    Digite o saldo do débito: <input id="ipt_debito">
+    <br><br>
+    <button onclick="analisar()">Analisar conta</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var saldo = Number(ipt_saldo.value)
+        var debito = Number(ipt_debito.value)
+        var conta = saldo-debito
+        if(conta<0){
+            div_msg.innerHTML = `<b>O saldo atual da conta corrente é <span style= "color:red";>R$ ${conta.toFixed(2)}</span</b>`
+        } else{
+            div_msg.innerHTML = `<i>O saldo atual da conta corrente é <span style="color:blue";>R$ ${conta.toFixed(2)}</span>.</i>`
+        }
+    }
+</script>

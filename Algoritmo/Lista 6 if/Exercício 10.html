@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Streaming</h1>
+    <br><br>
+    Digite a última série assistida: 
+    <br>
+    <input id="ipt_serie">
+    <br><br>
+    Digite total de episódios assistidos: 
+    <br>
+    <input id="ipt_eps">
+    <br><br>
+    <button onclick="verificar()">Vefificar nível</button>
+    <br><br>
+    <div id="div_res1"></div>
+    <br><br>
+    <div id="div_res2"></div>
+
+
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var serie = ipt_serie.value
+        var eps = Number(ipt_eps.value)
+        var conta = eps*22
+        div_res1.innerHTML = `Vejo que você gosta da série ${serie}`
+        if (conta>30){
+            div_res2.innerHTML = `Uau, você realmente gosta dessa série!!`
+        }
+    }
+</script>
