@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Mercado Bom Doce</h1>
+    <br><br>
+    Quantidade de chocolates comprados: <input id="ipt_choco">
+    <br><br>
+    <button onclick="comprar()">Compra</button>
+    <br><br>
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+
+<script>
+    function comprar(){
+        var chocolates = Number(ipt_choco.value)
+        if(chocolates>12){
+            choco12 = chocolates*2.50
+            div_msg.innerHTML = `O valor da sua compra foi de R$ ${choco12}`
+        } else {
+            choco = chocolates*3
+            div_msg.innerHTML = `O valor da sua compra foi de R$ ${choco}`
+        }
+    }
+</script>

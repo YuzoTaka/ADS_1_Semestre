@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 5</title>
+</head>
+<body>
+    <h1>Boletim</h1>
+    <br><br>
+    Digite sua nota: <input id="ipt_nota1">
+    <br><br>
+    Digite sua outra nota: <input id="ipt_nota2">
+    <br><br>
+    <button onclick="verificar()">Verificar situação</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var nota1 = Number(ipt_nota1.value)
+        var nota2 = Number(ipt_nota2.value)
+        var media = (nota1+nota2)/2
+        if (media>=6){
+            div_msg.innerHTML = `Parabéns, aprovado!!`
+        } else{
+            div_msg.innerHTML = `Tente outra vez...`
+        }
+
+    }
+</script>

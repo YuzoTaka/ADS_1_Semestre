@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+</head>
+<body>
+    <h1>Temperatura</h1>
+    <br><br>
+    Digite a temperatura do ambiente: <input id="ipt_temp">
+    <br><br>
+    <button onclick="verificar()">Verificar clima</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var temperatura = Number(ipt_temp.value)
+        if(temperatura>=10){
+            div_msg.innerHTML = `<img src="https://preview.redd.it/xrl03scb0ic71.png?width=640&crop=smart&auto=webp&s=05aff32120d2e7686fcec13b4a8f5f1dc3b265f9" style="height: 250px">`
+        } else{
+            div_msg.innerHTML = `<img src = "http://3.bp.blogspot.com/-qZxHHlBnbqw/VgkjBvXfXjI/AAAAAAAALy0/dg168gBUppk/s1600/eggs-benedict-shokugeki-no-souma-13-02.png" style="height: 250px">`
+        }
+    }
+
+</script>
