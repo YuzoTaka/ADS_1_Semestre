@@ -1,0 +1,112 @@
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(0, 0, 0);
+}
+
+/*Header*/
+.header{
+    border-bottom: 2px solid #32b8cd;
+}
+
+.container{
+    color: #32b8cd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container ul{
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly;
+    list-style: none;
+    color: #e3b062;
+}
+
+.header .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container a{
+    text-decoration: none;
+    color: #e3b062;
+}
+
+.agora{
+    font-weight: 600;
+}
+
+/*Banner*/
+
+.banner{
+    height: 500px;
+    background-image: url("home.png");
+    background-size: cover;
+}
+
+.banner .container{
+    height: 500px;
+    align-items: center;
+}
+
+.banner p{
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    width: 280px;
+    margin-left: 350px;
+}
+
+.banner span{
+    font-weight: 800;
+}
+
+/*Login*/
+
+.banner .card{
+    display: flex;
+    background-color: #fff;
+    height: 450px;
+    width: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.card{
+    margin-top: 20px;
+}
+
+.btn{
+    font-family: monospace;
+    margin-top: 10px;
+    border: 0;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 15px;
+    background-color: #e75459;
+    cursor: pointer;
+}
+
+.card input{
+    height: 30px;
+    border: 1px solid #e75459;
+    border-radius: 4px;
+}
+/*
+input
+h 30px;
+border 1px solid #?;
+border-ragius: 4px;
+
+*/
+
+
+
