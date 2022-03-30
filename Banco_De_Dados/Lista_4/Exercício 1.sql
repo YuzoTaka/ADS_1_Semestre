@@ -3,69 +3,76 @@ CREATE DATABASE sprint1;
 USE sprint1;
 
 -- Configurar a chave estrangeira na tabela conforme sua modelagem (Pode fazer no comando CREATE TABLE);
-CREATE TABLE disciplina(
-    idDisciplina INT PRIMARY KEY AUTO_INCREMENT,
-    nomeDisc VARCHAR(40)
-);
 
 CREATE TABLE professor(
     idProfessor INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
     sobrenome VARCHAR(30),
     especialidade1 VARCHAR(40),
-    especialidade2 VARCHAR(40),
-    fkDisciplina INT,
-    FOREIGN KEY (fkDisciplina) REFERENCES disciplina(idDisciplina)
+    especialidade2 VARCHAR(40)
 );
+
+CREATE TABLE disciplina(
+    idDisciplina INT PRIMARY KEY AUTO_INCREMENT,
+    nomeDisc VARCHAR(40),
+    fkProfessor INT,
+    FOREIGN KEY(fkProfessor) REFERENCES professor(idProfessor)
+);
+
 
 INSERT INTO professor(nome, sobrenome, especialidade1, especialidade2) VALUES
 ('Carlos', 'Buckman', 'Banco de Dados', 'regra de 3'),
-('Robertinha', 'Strange', 'Arq. COmp', 'bhaskara'),
+('Robertinha', 'Strange', 'Arq. Comp', 'bhaskara'),
 ('Naruto', 'Bolt', 'multiplicação', 'cubo mágico'),
 ('Marcon', 'Phoenix', 'Soma', 'GameShark'),
-('Podro', 'Logman', 'minecraft', 'JS'),
+('Pedro', 'Logman', 'minecraft', 'JS'),
 ('Matheusa', 'Postman', 'HTML', 'arduíno');
 
-INSERT INTO disciplina(nomeDisc) VALUES
-('matemática'),
-('ingles'),
-('física'),
-('arte urbana');
+INSERT INTO disciplina(nomeDisc, fkProfessor) VALUES
+('matemática', 1),
+('ingles', 2),
+('física', 3);
 
-UPDATE professor SET fkDisciplina = 1 WHERE idProfessor = 1;
-UPDATE professor SET fkDisciplina = 3 WHERE idProfessor = 2;
-UPDATE professor SET fkDisciplina = 4 WHERE idProfessor = 3;
-UPDATE professor SET fkDisciplina = 2 WHERE idProfessor = 4;
-UPDATE professor SET fkDisciplina = 1 WHERE idProfessor = 5;
-UPDATE professor SET fkDisciplina = 2 WHERE idProfessor = 6;
+UPDATE Disciplina SET fkProfessor = 1 WHERE idDisciplina = 1;
+UPDATE Disciplina SET fkProfessor = 2 WHERE idDisciplina = 2;
+UPDATE Disciplina SET fkProfessor = 3 WHERE idDisciplina = 3;
+
+SELECT * FROM professor;
+SELECT * FROM disciplina;
 
 -- Exibir os professores e suas respectivas disciplinas;
-SELECT p.*, d.nomeDisc 
-    FROM professor as p 
-    JOIN disciplina as d 
-    ON p.fkDisciplina = d.idDisciplina;
+SELECT *
+    FROM disciplina as d 
+    JOIN professor as p 
+    ON d.idDisciplina = d.fkProfessor;
 
 
 -- Exibir apenas o nome da disciplina e o nome do respectivo professor;
 SELECT d.nomeDisc, p.nome
     FROM disciplina as d
     JOIN professor as p
-    ON d.idDisciplina = p.fkDisciplina;
+    ON p.idProfessor = d.fkProfessor;
 
 -- Exibir os dados dos professores, suas respectivas disciplinas de um determinado sobrenome;
-SELECT p.*, d.nomeDisc
-    FROM professor as p
-    JOIN disciplina as d
-    ON d.idDisciplina = p.fkDisciplina
-    WHERE sobrenome = 'Phoenix';
+SELECT d.nomeDisc, p.*
+    FROM disciplina as d
+    JOIN professor as p
+    ON p.idProfessor = d.fkProfessor
+    WHERE p.sobrenome = 'Phoenix';
+
 
 -- Exibir apenas a especialidade1 e o nome da disciplina, de um determinado professor, ordenado de forma crescente pela especialidade1;
-SELECT p.especialidade1, d.nomeDisc
-    FROM professor as p 
-    JOIN disciplina as d 
-    ON p.fkDisciplina = d.idDisciplina
-    ORDER BY especialidade1;
-
+SELECT p.nome, d.nomeDisc
+    FROM disciplina as d
+    JOIN professor as p 
+    ON d.fkProfessor = p.idProfessor
+    WHERE p.nome = 'Carlos';
+    
+-- LEFT/RIGHT JOIN
+    
+SELECT * FROM professor LEFT JOIN disciplina ON idProfessor = fkProfessor;
+    
+    
 
 
 
