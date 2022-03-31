@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Cadastro AutoEscola</h1>
+    <br><br>
+    Nome do aluno: <input id="ipt_nome">
+    <br><br>
+    Idade do aluno: <input id="ipt_idade">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+
+</body>
+</html>
+
+<script>
+    function cadastrar(){
+        var nome = ipt_nome.value;
+        var idade = Number(ipt_idade.value);
+        var menor = 18-idade
+        if(nome==``){
+            div_resposta.innerHTML = `Nome invalido`
+        }
+        else if(idade<=0){
+            div_resposta.innerHTML = `Idade Invalida`
+        }
+        else if(idade>=80){
+            div_resposta.innerHTML = `Procurar escola especial`
+        }
+        else if(idade<18 && idade>=0){
+            alert(`Este aluno tem que aguardar ${menor} anos para tirar a CNH`)
+        }
+        else if(idade>=18 && idade<80){
+            div_resposta.innerHTML = `Seu nome é ${nome} e você tem ${idade} anos.`
+        }
+    }
+</script>
