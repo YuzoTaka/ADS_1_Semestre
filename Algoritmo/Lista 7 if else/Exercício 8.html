@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h1>Elevador sincero</h1>
+    <br><br>
+    Quantidade de homens: <input id="ipt_qtdHomens">
+    <br><br>
+    Quantidade de mulheres: <input id="ipt_qtdMulheres">
+    <br><br>
+    <button onclick="ligar()">Ligar elevador</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function ligar(){
+        var homem = Number(ipt_qtdHomens.value);
+        var mulher = Number(ipt_qtdMulheres.value);
+        var conta = (homem*90)+(mulher*70);
+        var perder = conta-500;
+        if(conta<500){
+            div_resposta.innerHTML = `Elevador vai se mover, pois está com ${conta.toFixed(2)} kg`
+        } else{
+            div_resposta.innerHTML = `<span style="color: red";>Alguém precisa descer. Precisa perder ${perder.toFixed(2)} kg para mover o elevador</span>`
+        }
+    }
+</script>

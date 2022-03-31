@@ -1,6 +1,6 @@
-CREATE DATABASE lista5;
+CREATE DATABASE ex1;
 
-USE lista5;
+USE ex1;
 
 CREATE TABLE pet (
 	idPet INT PRIMARY KEY AUTO_INCREMENT,
@@ -33,7 +33,6 @@ INSERT INTO pet VALUES
 (null, 'coelho', 'Perna-longa', 'Rex', '2016-09-01', 2),
 (null, 'passaro', 'Frô', 'Canário', '2016-09-25', 3);
 
-SELECT * FROM cliente;
 
 -- - Altere o tamanho da coluna nome do cliente.
 ALTER TABLE cliente MODIFY nome VARCHAR(50);
@@ -50,7 +49,30 @@ SELECT * FROM pet ORDER BY nome;
 -- Exibir os dados dos clientes ordenados em ordem decrescente pelo bairro.
 SELECT * FROM cliente ORDER BY endereco DESC;
 
---
+-- Exibir os dados dos pets cujo nome comece com uma determinada letra.
+SELECT * FROM pet WHERE nome like 'F%';
 
+--  Exibir os dados dos clientes que têm o mesmo sobrenome.
+SELECT * FROM cliente WHERE sobrenome = 'Felix';
 
-DROP DATABASE lista5;
+--  Alterar o telefone de um determinado cliente
+UPDATE cliente SET telefonefixo = '4132-5712' WHERE idCliente = 2;
+
+-- Exibir os dados dos clientes para verificar se alterou.
+SELECT * FROM Cliente;
+
+-- - Exibir os dados dos pets e dos seus respectivos donos.
+SELECT * FROM pet JOIN cliente ON fkCliente = idCliente;
+
+-- Exibir os dados dos pets e dos seus respectivos donos, mas somente de um determinado cliente.
+SELECT * FROM pet JOIN cliente on fkCliente = idCliente WHERE idCliente = 1;
+
+-- Excluir algum pet.
+DELETE FROM pet WHERE idPet = 102;
+
+-- Exibir os dados dos pets para verificar se excluiu
+SELECT * FROM pet;
+
+--  Excluir as tabelas.
+DROP TABLE pet, cliente;
+
