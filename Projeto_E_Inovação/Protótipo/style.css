@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace, sans-serif;
+    background-color: black;
+}
+
+.header {
+    border-bottom: 2px solid #32b9cd;
+}
+
+.container {
+    color: #32b9cd;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container ul {
+    color: #e3b062;
+    display: flex;
+    width: 600px;
+    justify-content: space-evenly ;
+    list-style: none;
+}
+
+.header .container {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container ul a {
+    text-decoration: none;
+    color: #e3b062;
+}
+
+ul a:hover {
+    color: #ffd08a;
+}
+
+.agora {
+    font-weight: 600;
+    color: #eb9a21;
+}
+
+/* BANNER */
+
+.banner {
+    height: 500px;
+    background-image: url("home.png");
+    background-size: cover;
+}
+
+.banner .container {
+    height: 500px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.banner p {
+    color: rgb(255, 255, 255);
+    width: 280px;
+    margin: 0;
+    padding: 0;
+    font-size: 36px;
+    margin-left: 350px;
+}
+
+.banner span {
+    font-weight: 800;
+}
+
+/* CADASTRO */
+
+/* .banner .card {
+    background-color: rgba(49, 49, 49, 0.856);
+    height: 600px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 25px;
+}
+
+.btn {
+    font-family: monospace;
+    margin-top: 10px;
+    border: 0;
+    font-weight: 600;
+    border-radius: 4px;
+    font-size: 18px;
+    color: white;
+    padding: 10px 15px;
+    background-color: #32b9cd;
+    cursor: pointer;
+}
+
+
+.card input {
+    height: 30px;
+    border: 1px solid #32b9cd;
+    border-radius: 4px;
+}
+
+.card a{
+    text-decoration: none;
+    color: #32b9cd;
+} */

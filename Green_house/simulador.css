@@ -1,0 +1,15 @@
+.simulador{
+        width: 200%;
+        height: 800px;
+        background: #5be754;
+        padding-top: 10px;
+        justify-content: space-evenly;
+
+}
+
+.simulador h1{
+    display: flex;
+    font-weight: 800px;
+    color: white;
+    justify-content: space-between
+}
