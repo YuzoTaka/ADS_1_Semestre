@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpo Épico</title>
+    <link rel="stylesheet" href="jokenpo.css">
+</head>
+<body>
+    <h1 id="inicio">Jokenpo dos crias</h1>
+    <br>
+    <div id="div_joga1">
+    <h3>Jogador 1</h3>
+    <br><br>
+    Digite seu nome:
+    <input id="ipt_nome1">
+    <br><br>
+
+    <select id="sel_jogo1">
+        <option value="0">--Selecionar--</option>
+        <option value="1">Pedra</option>
+        <option value="2">Papel</option>
+        <option value="3">Tesoura</option>
+    </select>
+    <br><br>
+    <a href="#jog2">Confirmar escolha</a>
+    </div>
+    <br><br><br><br>
+    <div id="div_joga2">
+    <h3 id="jog2">Jogador 2</h3>
+    <br><br>
+    Digite seu nome:
+    <input id="ipt_nome2">
+    <br><br>
+    <select id="sel_jogo2">
+        <option value="0">--Selecionar--</option>
+        <option value="1">Pedra</option>
+        <option value="2">Papel</option>
+        <option value="3">Tesoura</option>
+    </select>
+    <br><br>
+    <a href="#resul">Confirmar escolha</a>
+    </div>
+    <br>
+    <div id="div_resul">
+    <h1 id="resul">Resultado:</h1>
+    <br><br><br>
+    <button onclick="resultado()">Resultado</button>
+    <br><br>
+    <a href="#inicio">Voltar para o início</a>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+   function resultado(){
+        var nome1 = ipt_nome1.value;
+        var jogo1 = sel_jogo1.value;
+        var nome2 = ipt_nome2.value;
+        var jogo2 = sel_jogo2.value;
+        if(nome1==``|| nome2==``){
+            alert(`Insira seu nome, burrão`)
+        }
+        if(jogo1==0 || jogo2==0){
+            alert(`Insira alguma opção, burro`)
+        }
+        if(jogo1==1 && jogo2==1){
+            alert(`Empate!!`)
+        }
+        if(jogo1==1 && jogo2==2){
+            alert(`O jogador ${nome2} venceu!!`)
+        }
+        if(jogo1==1 && jogo2==3){
+            alert(`O jogador ${nome1} venceu!!`)
+        }
+        if(jogo1==2 && jogo2==1){
+            alert(`O jogador ${nome1} venceu!!`)
+        }
+        if(jogo1==2 && jogo2==2){
+            alert(`Empate!!`)
+        }
+        if(jogo1==2 && jogo2==3){
+            alert(`O jogador ${nome2} venceu!!`)
+        }
+        if(jogo1==3 && jogo2==1){
+            alert(`O jogador ${nome2} venceu!!`)
+        }
+        if(jogo1==3 && jogo2==2){
+            alert(`O jogador ${nome1} venceu!!`)
+        }
+        if(jogo1==3 && jogo2==3){
+            alert(`Empate!!`)
+        }
+        
+    }
+</script>

@@ -15,6 +15,11 @@ body {
     color: #5ecd32;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    height: 2rem;
+    width: 100%;
+    gap: 2rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .container ul {

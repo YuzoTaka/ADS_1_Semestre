@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>
+</head>
+<body>
+    <h1>Lutador</h1>
+    <br><br><br>
+    Vida do lutador: <b id="b_vida">1000</b>
+    <br><br>
+    <button onclick="apanhar()">Apanhar</button>
+    <button onclick="recuperar()">Recuperar vida</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+    
+</body>
+</html>
+
+<script>
+    var vida = 1000;
+    if(vida>0){
+        div_resposta.innerHTML = `Lutador ainda vivo!`
+    }
+    if(vida>0){
+    function apanhar(){
+        vida -= 100;
+        b_vida.innerHTML = `${vida}`
+        if(vida<=0){
+            div_resposta.innerHTML = `Lutador já era! `
+        }
+    }
+}
+    function recuperar(){
+        if(vida>0){
+        vida += 50
+        b_vida.innerHTML = `${vida}`
+        }
+    }
+</script>

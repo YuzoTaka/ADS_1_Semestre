@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 19</title>
+</head>
+<body>
+    <h1>Batalha épica!!</h1>
+    <br><br>
+    <div id="div_img1"><img src="https://uploads.jovemnerd.com.br/wp-content/uploads/2017/11/v-dragon-ball-freeza-christopher-ayres-1-760x428.jpg" style="width:300px""></div>
+    <div id="div_vida1" style="background-color: rgb(69, 69,255); height: 15px; width: 300px;"></div> 
+    <button onclick="apanhar1()">Apanhar</button>
+    <br><br>
+    <div id="div_img2"><img src="https://criticalhits.com.br/wp-content/uploads/2020/04/kuririn.jpg" style="width:300px"></div>
+    <div id="div_vida2" style="background-color: red; height: 15px; width: 300px;"></div>
+    <button onclick="apanhar2()">Apanhar</button>
+    <br><br><br>
+    <div id="div_msg"></div>
+
+    
+</body>
+</html>
+
+<script>
+    var vida1 = 300;
+    var vida2 = 300;
+
+    function apanhar1(){
+        vida1 -= 25;
+        div_vida1.style.width = `${vida1}px`
+         if(vida1<=0){ 
+            div_img1.innerHTML = `<img src="https://nerdhits.com.br/wp-content/uploads/2021/01/jiren-freeza-cauda-dragon-ball-super.jpg" style="width:300px">`
+            div_msg.innerHTML = `<b>Kuririn wins!!</b>`
+        }
+    } 
+        
+        
+    function apanhar2(){
+        vida2 -= 25;
+        div_vida2.style.width = `${vida2}px`
+        if(vida2<=0){ 
+        div_img2.innerHTML = `<img src="https://pm1.narvii.com/6341/6650e8f9cca9ad1bdd72545fb88c94193f04b11a_hq.jpg" style="width:300px; height: 190px;">`
+        div_msg.innerHTML = `<b>Freeza wins!!</b>`
+        }
+    } 
+
+
+</script>
+
+

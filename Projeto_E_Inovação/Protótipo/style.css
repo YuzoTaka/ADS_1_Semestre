@@ -12,6 +12,13 @@ body {
     color: #32b9cd;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    /* background-color: white; */
+    height: 2rem;
+    width: 100%;
+    gap: 2rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    
 }
 
 .container ul {
@@ -20,6 +27,7 @@ body {
     width: 600px;
     justify-content: space-evenly ;
     list-style: none;
+    
 }
 
 .header .container {
@@ -68,9 +76,9 @@ ul a:hover {
     font-weight: 800;
 }
 
-/* CADASTRO */
+/* CADASTRO  */
 
-/* .banner .card {
+ .banner .card {
     background-color: rgba(49, 49, 49, 0.856);
     height: 600px;
     width: 400px;
@@ -106,4 +114,4 @@ ul a:hover {
 .card a{
     text-decoration: none;
     color: #32b9cd;
-} */
+}

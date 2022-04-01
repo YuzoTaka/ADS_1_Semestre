@@ -1,0 +1,24 @@
+body{
+    margin: 0;
+}
+
+#div_joga1{
+    background-color: rgb(108, 108, 251);
+    height: 1000px;
+}
+
+#div_joga2{
+    padding-top: 100px;
+    background-color: red;
+    height: 1000px;
+}
+
+#div_resul{
+    background-color: rgb(246, 143, 246);
+    height: 1000px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
