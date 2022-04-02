@@ -15,11 +15,11 @@ body {
     color: #5ecd32;
     display: flex;
     justify-content: space-between;
-    position: fixed;
+    /* position: fixed;
     height: 2rem;
     width: 100%;
     gap: 2rem;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); */
 }
 
 .container ul {
@@ -75,10 +75,10 @@ body {
     padding: 0;
     font-size: 36px;
     margin-left: 350px;
-    background-color: #213d0d9a;
+    /* background-color: #213d0d9a;
     border-radius: 30px;
     width: 650px;
-    height: 100px
+    height: 100px */
 }
 
 .banner span {

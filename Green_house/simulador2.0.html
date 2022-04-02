@@ -4,18 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador financeiro</title>
+    <title>Simulador</title>
+    <link rel="stylesheet" href="simulador.css">
+    <link rel="stylesheet" href="style24.css">
 </head>
 <body>
-    <h1>Simulador financeiro</h1>
-    <br><br><br>
-    Largura da estufa (m): <input id="ipt_largura" placeholder="Digite a largura">
-    <br><br>
-    Comprimento da estufa (m): <input id="ipt_comprimento" placeholder="Digita o comprimento">
-    <br><br>
-    <button onclick="simular()">Simulador</button>
-    <br><br>
-    <div id="div_resposta"></div>
+    <div class="header">
+        <div class="container">
+            <!-- <img class="imagemLogo" src="green.png"> -->
+            <h1>Green House</h1>
+
+            <ul>
+                <li class="agora"><a href="#">Home</a></li>
+                <li><a href="#">Simulador</a></li>
+                <li><a href="#">Nossos Serviços</a></li>
+                <li><a href="#">Sobre nós</a></li>
+                <li><a>|</a></li>
+                <li><a href="loginGreen.html">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="simulador">
+        <div class="exibir">
+            <h1>Simulador financeiro</h1>            
+            Largura da estufa (m):             
+             <input id="ipt_largura" placeholder="Digite a largura">            
+            Comprimento da estufa (m): <input id="ipt_comprimento" placeholder="Digite o  comprimento">           
+            <button onclick="simular()">Simulador</button>
+             <div id="div_resposta"></div>
+        </div>
+    </div>
+
 
 
 </body>
@@ -31,23 +51,32 @@
         var preco = 2500;
         var qtdSensor = m2/sensor;
         qtdSensor = Math.ceil(qtdSensor);
-        if(m2<=125){
+
+        if(larg==``){
+            div_resposta.innerHTML = `Digite o valor da largura.`
+        }
+        if(comp==``){
+            div_resposta.innerHTML = `Digite o valor do comprimento.`
+            ipt_comprimento.placeholder = `Campo obrigatório.`
+            ipt_comprimento.style = `border: 2px solid red; color: red`
+        }
+        else if(m2<=125 && m2>0){
             preco1 = preco;
             div_resposta.innerHTML = `Sua área da estufa é de <b>${m2} m²</b>, então será necessário <b>${qtdSensor} sensor</b>, e o custo do sistema será de <b>R$ ${preco1.toFixed(2)}</b>.`
         }
-        if(m2>125 && m2<=250){
+        else if(m2>125 && m2<=250){
             preco3 = (preco*0.8)*qtdSensor;
             div_resposta.innerHTML = `Sua área da estufa é de <b>${m2} m²</b>, então serão necessários <b>${qtdSensor} sensores</b>, e o custo do sistema será de <b>R$ ${preco3.toFixed(2)}</b>.`
         }
-        if(m2>250 && m2<=375){
+        else if(m2>250 && m2<=375){
             preco3 = (preco*0.8)*qtdSensor;
             div_resposta.innerHTML = `Sua área da estufa é de <b>${m2} m²</b>, então serão necessários <b>${qtdSensor} sensores</b>, e o custo do sistema será de <b>R$ ${preco3.toFixed(2)}</b>.`
         }
-        if(m2>375 && m2<=500){
+        else if(m2>375 && m2<=500){
             preco4 = (preco*0.7)*qtdSensor;
             div_resposta.innerHTML = `Sua área da estufa é de <b>${m2} m²</b>, então serão necessários <b>${qtdSensor} sensores</b>, e o custo do sistema será de <b>R$ ${preco4.toFixed(2)}</b>.`
         }
-        if(m2>500){
+        else if(m2>500){
             preco5 = (preco*0.65);
             div_resposta.innerHTML = `Sua área da estufa é de <b>${m2} m²</b>, então serão necessários <b>${qtdSensor} sensores</b>, e o custo do sistema será de <b>R$ ${preco5.toFixed(2)}</b>.`     
         }
