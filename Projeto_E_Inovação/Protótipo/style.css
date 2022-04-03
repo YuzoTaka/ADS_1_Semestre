@@ -12,12 +12,7 @@ body {
     color: #32b9cd;
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    /* background-color: white; */
-    height: 2rem;
-    width: 100%;
-    gap: 2rem;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
     
 }
 

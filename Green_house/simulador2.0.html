@@ -11,7 +11,7 @@
 <body>
     <div class="header">
         <div class="container">
-            <!-- <img class="imagemLogo" src="green.png"> -->
+            <img class="imagemLogo" src="green.png">
             <h1>Green House</h1>
 
             <ul>
@@ -43,6 +43,13 @@
 
 <script>
 
+    function reset(){
+        ipt_comprimento.classList.remove("placeholderred")
+        ipt_comprimento.style = `border: 2px solid none;`
+        ipt_largura.classList.remove("placeholderred")
+        ipt_largura.style = `border: 2px solid none;`
+        div_resposta.innerHTML = ``
+    }
     function simular(){
         var larg = Number(ipt_largura.value);
         var comp = Number(ipt_comprimento.value);
@@ -51,14 +58,18 @@
         var preco = 2500;
         var qtdSensor = m2/sensor;
         qtdSensor = Math.ceil(qtdSensor);
-
+        reset()
         if(larg==``){
             div_resposta.innerHTML = `Digite o valor da largura.`
+            ipt_largura.placeholder = `Campo obrigatório.`
+            ipt_largura.style = `border: 2px solid red;`
+            ipt_largura.classList.add("placeholderred")
         }
         if(comp==``){
-            div_resposta.innerHTML = `Digite o valor do comprimento.`
+            div_resposta.innerHTML += `<br>Digite o valor do comprimento.`
             ipt_comprimento.placeholder = `Campo obrigatório.`
-            ipt_comprimento.style = `border: 2px solid red; color: red`
+            ipt_comprimento.style = `border: 2px solid red;`
+            ipt_comprimento.classList.add("placeholderred")
         }
         else if(m2<=125 && m2>0){
             preco1 = preco;

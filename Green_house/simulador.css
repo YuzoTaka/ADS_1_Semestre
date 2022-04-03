@@ -45,4 +45,8 @@
     text-align: center;
 }
 
+input.placeholderred::-webkit-input-placeholder{
+    color: red;
+}
+
 
