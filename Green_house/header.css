@@ -1,0 +1,30 @@
+.container {
+    color: #5ecd32;
+    display: flex;
+    justify-content: space-between;
+}
+
+.imagemLogo {
+    height: 60px;
+    margin-left: 110px;
+    margin-top: 17px;
+}
+
+.header h1 {
+    margin-right: 200px;
+}
+
+.container ul {
+    color: #5ecd32;
+    display: flex;
+    width: 600px;
+    justify-content: space-around ;
+    list-style: none;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.container ul a {
+    text-decoration: none;
+    color: #5ecd32;
+}

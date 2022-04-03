@@ -21,7 +21,7 @@ CREATE TABLE acompanhante(
 	idAcomp INT AUTO_INCREMENT,
     fkFuncio INT,
     PRIMARY KEY(idAcomp, fkFuncio),
-    nome VARCHAR(40),
+    nomeAcomp VARCHAR(40),
     relacao VARCHAR(30),
     dtNasc DATE,
     FOREIGN KEY(fkFuncio) REFERENCES funcionario(idFuncio)
@@ -44,8 +44,28 @@ INSERT INTO acompanhante(nome, relacao, dtNasc, fkFuncio) VALUES
 ('Marcosa', 'mãe', '2000-10-10', 1),
 ('Felix', 'namorado', '2000-10-10', 2),
 ('Laísa', 'esposa', '2000-10-10', 3),
-('Hirosha', 'amiga', '2000-10-10', 4);
+('Hirosha', 'amiga', '2000-10-10', 5);
 
 -- Exibir os dados dos setores e dos seus respectivos funcionários.
 SELECT * FROM setor JOIN funcionario ON idSetor = fkSetor;
+
+--  Exibir os dados de um determinado setor (informar o nome do setor na consulta) e dos seus respectivos funcionários.
+SELECT * FROM setor JOIN funcionario ON fkSetor = idSetor;
+
+-- Exibir os dados dos funcionários e de seus acompanhantes.
+SELECT * FROM funcionario JOIN acompanhante ON idFuncio = fkFuncio;
+
+-- Exibir os dados de apenas um funcionário (informar o nome do funcionário) e os dados de seus acompanhantes.
+SELECT * FROM funcionario JOIN acompanhante ON idFuncio = fkFuncio WHERE nomeFuncio = 'Larisso';
+
+-- Exibir os dados dos funcionários, dos setores em que trabalham e dos seus acompanhantes.
+SELECT * from funcionario JOIN setor ON idSetor = fkSetor JOIN acompanhante ON idFuncio = fkFuncio;
+
+DESC funcionario;
+DESC acompanhante;
+
+SELECT * FROM acompanhante;
+
+DROP database PraticaFuncionario;
+
 
