@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 9</title>
+</head>
+<body>
+    <br><br>
+    <select onchange="especie()" id="sel_especie">
+        <option value="0">--Selecionar--</option>
+        <option value="1">Ovíparo</option>
+        <option value="2">Mamífero</option>
+    </select>
+    <br><br>
+    <select onchange="oviparo()" id="sel_oviparo" style="display: none;">
+        <option value="0">--Selecionar--</option>
+        <option value="1">Galinha</option>
+        <option value="2">Peixe</option>
+        <option value="3">Tartaruga</option>
+    </select>
+    <select onchange="mamifero()" id="sel_mamifero" style="display: none;">
+        <option value="0">--Selecionar--</option>
+        <option value="1">Elefante</option>
+        <option value="2">Porco</option>
+        <option value="3">Coelho</option>
+    </select>
+    <br><br>
+    <div id="div_img" style="display: none;"></div>
+    <br><br>
+
+    <div id="div_compra" style="display: none;">
+    <br><br>
+    Valor da compra: <input id="ipt_compra">
+    <br><br>
+    <button onclick="calcular()">Calcular</button>
+    <br><br>
+    <div id="div_resultado" style="display: none;"></div>
+    </div>
+    
+    
+</body>
+</html>
+
+<script>
+    function especie(){
+        var ax_especie = sel_especie.value;
+        div_compra.style.display = 'none';
+        if(ax_especie==0){
+        sel_mamifero.style.display = 'none';
+        sel_oviparo.style.display = 'none';
+        div_img.style.display = 'none'; 
+        }
+        if(ax_especie==1){
+        sel_mamifero.style.display = 'none';
+        sel_oviparo.style.display = 'block';
+        div_img.style.display = 'none';
+        
+        }
+        else if(ax_especie==2){
+        sel_mamifero.style.display = 'block';
+        sel_oviparo.style.display = 'none';
+        div_img.style.display = 'none';
+        }
+    }
+
+    function oviparo(){
+    var ax_oviparo = sel_oviparo.value;
+    div_img.style.display = 'block';
+    if(ax_oviparo==0){
+            div_img.innerHTML = ``
+            div_compra.style.display = 'none';
+            div_valor.style.display = 'none';
+        }
+        if(ax_oviparo==1){
+            div_img.innerHTML = `<img src="http://pm1.narvii.com/6536/8f87596d05497dce204c72ad78daeda47fc75bd7_00.jpg" style="width: 300px; height: 200px;">`
+        }
+        else if(ax_oviparo==2){
+            div_img.innerHTML = `<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png" style="width: 300px; height: 250px;">`
+        }
+        else if(ax_oviparo==3){
+            div_img.innerHTML = `<img src="https://static.wikia.nocookie.net/naruto/images/c/cd/Ninkame_%28Render%29.png/revision/latest/scale-to-width-down/1024?cb=20170619222424&path-prefix=pt-br" style="width: 300px; height: 250px;">`
+        }
+        div_compra.style.display = 'block';
+        
+
+    }
+
+    function mamifero(){
+        var ax_mamifero = sel_mamifero.value;
+        div_img.style.display= 'block';
+        if(ax_mamifero==0){
+            div_img.innerHTML = ``
+            div_compra.style.display = 'none';
+            
+        }
+        if(ax_mamifero==1){
+            div_img.innerHTML = `<img src="https://img.freepik.com/vetores-gratis/elefante-bonito-sentado-e-acenando-a-mao-dos-desenhos-animados-icone-ilustracao-vetorial_138676-2220.jpg?size=338&ext=jpg&ga=GA1.2.1800748119.1632960000" style="width: 300px; height: 200px;">`
+        }
+        else if(ax_mamifero==2){
+            div_img.innerHTML = `<img src="https://nerdhits.com.br/wp-content/uploads/2021/04/MILD-1200x675.jpg" style="width: 300px; height: 250px;">`
+        }
+        else if(ax_mamifero==3){
+            div_img.innerHTML = `<img src="https://i.pinimg.com/originals/31/07/ab/3107abcce005c211d4d2c0b9d6034eb9.jpg" style="width: 300px; height: 250px;">`
+        }
+        div_compra.style.display = 'block';
+      
+        
+    }
+
+    function calcular(){
+        var valor = Number(ipt_compra.value)
+        var preco = 0;
+
+        div_resultado.style.display = 'none'
+        if(especie==1){
+            preco = valor * 0.05;
+       }
+        else if(especie==2){
+            preco = valor * 0.1;
+
+        }
+        
+        div_resultado.style.display = 'block';
+        div_resultado.innerHTML = `O imposto será de R$ ${preco.toFixed(2)}`;
+    }
+    
+</script>
