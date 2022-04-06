@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1>Teste de dedo</h1>
+    <br><br>
+    Você já clicou <span id="spn_vezes">0</span> vezes.
+    <br><br>
+    <div id="div_resposta"></div>
+    <br><br>
+    <button onclick="clicar()">Clica neu</button>
+ 
+</body>
+</html>
+
+<script>
+    var clicks = 0;
+    function clicar(){
+        clicks ++
+        spn_vezes.innerHTML = `${clicks}`
+        if(clicks<5){
+            div_resposta.innerHTML = `Dedo fraquinho, hein`
+        }
+        else{
+            if(clicks>=5 && clicks<=10){
+                div_resposta.innerHTML = `Dedo bom, mano`
+            }
+            if(clicks>=11 && clicks<=15){
+                div_resposta.innerHTML = `Gosta de clicar hein`
+            }
+            if(clicks>15){
+                div_resposta.innerHTML = `Eita dedo nervoso!!`
+            }
+        }
+    }
+</script>

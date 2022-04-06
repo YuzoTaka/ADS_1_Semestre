@@ -28,15 +28,16 @@
     </select>
     <br><br>
     <div id="div_img" style="display: none;"></div>
-    <br><br>
-
+    <br>
     <div id="div_compra" style="display: none;">
     <br><br>
     Valor da compra: <input id="ipt_compra">
     <br><br>
     <button onclick="calcular()">Calcular</button>
     <br><br>
-    <div id="div_resultado" style="display: none;"></div>
+    <div id="div_resultado"></div>
+    <br><br>
+    <button onclick="reiniciar()">Reiniciar</button>
     </div>
     
     
@@ -51,6 +52,7 @@
         sel_mamifero.style.display = 'none';
         sel_oviparo.style.display = 'none';
         div_img.style.display = 'none'; 
+        div_resultado.innerHTML = ``;
         }
         if(ax_especie==1){
         sel_mamifero.style.display = 'none';
@@ -68,19 +70,21 @@
     function oviparo(){
     var ax_oviparo = sel_oviparo.value;
     div_img.style.display = 'block';
-    if(ax_oviparo==0){
+        if(ax_oviparo==0){
             div_img.innerHTML = ``
             div_compra.style.display = 'none';
             div_valor.style.display = 'none';
         }
-        if(ax_oviparo==1){
+        else{
+            if(ax_oviparo==1){
             div_img.innerHTML = `<img src="http://pm1.narvii.com/6536/8f87596d05497dce204c72ad78daeda47fc75bd7_00.jpg" style="width: 300px; height: 200px;">`
-        }
-        else if(ax_oviparo==2){
+            }
+             if(ax_oviparo==2){
             div_img.innerHTML = `<img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png" style="width: 300px; height: 250px;">`
-        }
-        else if(ax_oviparo==3){
+            }
+            if(ax_oviparo==3){
             div_img.innerHTML = `<img src="https://static.wikia.nocookie.net/naruto/images/c/cd/Ninkame_%28Render%29.png/revision/latest/scale-to-width-down/1024?cb=20170619222424&path-prefix=pt-br" style="width: 300px; height: 250px;">`
+            }
         }
         div_compra.style.display = 'block';
         
@@ -95,35 +99,48 @@
             div_compra.style.display = 'none';
             
         }
-        if(ax_mamifero==1){
+        else{
+            if(ax_mamifero==1){
             div_img.innerHTML = `<img src="https://img.freepik.com/vetores-gratis/elefante-bonito-sentado-e-acenando-a-mao-dos-desenhos-animados-icone-ilustracao-vetorial_138676-2220.jpg?size=338&ext=jpg&ga=GA1.2.1800748119.1632960000" style="width: 300px; height: 200px;">`
-        }
-        else if(ax_mamifero==2){
+            }
+            if(ax_mamifero==2){
             div_img.innerHTML = `<img src="https://nerdhits.com.br/wp-content/uploads/2021/04/MILD-1200x675.jpg" style="width: 300px; height: 250px;">`
-        }
-        else if(ax_mamifero==3){
+            }
+            if(ax_mamifero==3){
             div_img.innerHTML = `<img src="https://i.pinimg.com/originals/31/07/ab/3107abcce005c211d4d2c0b9d6034eb9.jpg" style="width: 300px; height: 250px;">`
+            }
         }
         div_compra.style.display = 'block';
       
         
     }
 
+    var preco = 0;
     function calcular(){
+        var ax_especie = sel_especie.value;
         var valor = Number(ipt_compra.value)
-        var preco = 0;
 
-        div_resultado.style.display = 'none'
-        if(especie==1){
-            preco = valor * 0.05;
+        if(ax_especie==1){
+            preco += valor * 0.05;
+            
        }
-        else if(especie==2){
-            preco = valor * 0.1;
-
+        else {
+            if(ax_especie==2){
+            preco += valor * 0.1;
+        }
         }
         
-        div_resultado.style.display = 'block';
-        div_resultado.innerHTML = `O imposto será de R$ ${preco.toFixed(2)}`;
+       
+        div_resultado.innerHTML = `O imposto será de R$ ${preco.toFixed(2)}`
+        
+    }
+
+    function reiniciar(){
+        alert(`Valor total de todos os impostos calculados R$ ${preco.toFixed(2)}`)
+        sel_oviparo.style.display = `none`
+        sel_mamifero.style.display = `none`
+        div_img.style.display = 'none'
+        div_compra.style.display = 'none'
     }
     
 </script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Covid-19</h1>
+    <br><br>
+    Digite sua renda: <input id="ipt_pessoal">
+    <br><br>
+    Digite sua renda total familiar: <input id="ipt_familiar">
+    <br><br>
+    <button onclick="verificar()">Verificar ajuda</button>
+
+
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var rendaPe = ipt_pessoal.value;
+        var rendaFa = ipt_familiar.value;
+        if(rendaPe<=1050 && rendaFa<=2100){
+            alert(`Você terá direito!🤑`)
+        }
+        else{
+            alert(`Você NÃO terá direito!😴`)
+        }
+    }
+</script>

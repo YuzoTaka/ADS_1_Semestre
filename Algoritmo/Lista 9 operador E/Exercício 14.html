@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <br><br>
+    Digite o intervalo da altura para ser piloto: <input onkeyup="h_pilotar()" id="ipt_piloto">
+    <br><br>
+    Digite o intervalo da altura para jogador de basquete: <input>
+
+    
+</body>
+</html>
+
+<script>
+    function h_pilotar(){
+        var hPilot = ipt_piloto.value;
+        if(hPilot<1 && hPilot<1.90){
+            alert(`Não seguir em frente`)
+        }
+    }
+</script>

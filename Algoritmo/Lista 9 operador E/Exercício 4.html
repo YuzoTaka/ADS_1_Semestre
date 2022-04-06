@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>Nutricionista</h1>
+    <br><br>
+    <select id="sel_1">
+        <option>--Selecionar</option>
+        <option value="1">Ovos</option>
+        <option value="2">Leite de arroz</option>
+        <option value="3">Bacon</option>
+    </select>
+    <br><br>
+    <select id="sel_2">
+        <option>--Selecionar--</option>
+        <option value="1">Bife</option>
+        <option value="2">Hamburguer de soja</option>
+        <option value="3">Frango grelhado</option>
+    </select>
+    <br><br>
+    <select id="sel_3">
+        <option>--Selecionar--</option>
+        <option value="1">Picanha de soja</option>
+        <option value="2">Cupim</option>
+        <option value="3">Coração</option>
+    </select>
+    <br><br><br>
+    <button onclick="responder()">Sou vegano?</button>
+
+    
+</body>
+</html>
+    
+<script>
+    function responder(){
+        var box1 = sel_1.value;
+        var box2 = sel_2.value;
+        var box3 = sel_3.value;
+        if(box1==2 && box2==2 && box3==1){
+            alert(`Sim, você é vegane!!`)
+        } 
+        else{
+            alert(`Não, você não é vegane.`)
+        }
+    }
+
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+</head>
+<body>
+    <h1>Termometro</h1>
+    <br><br>
+    Digite a temperatura atual: <input id="ipt_temperatura">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+
+    
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var temp = ipt_temperatura.value
+        if(temp>=21 && temp<=24){
+            alert(`Temperatura confortável 😎`)
+        }
+        else{
+            alert(`Temperatura desconfortável 😫`)
+        }
+    }
+</script>

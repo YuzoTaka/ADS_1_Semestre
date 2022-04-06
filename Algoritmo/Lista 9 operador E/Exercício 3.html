@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Consultador de nota</h1>
+    <br><br>
+    Digite sua nota: <input id="ipt_nota">
+    <br><br>
+    <button onclick="avaliar()">Avaliar</button>
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var nota = ipt_nota.value;
+        if(nota>=0 && nota<=10){
+            alert(`Nota válida!🥳`)
+        }
+        else{
+            alert(`Onde já se viu nota menor que 0 e maior que 10?!🤔`)
+        }
+    }
+</script>
