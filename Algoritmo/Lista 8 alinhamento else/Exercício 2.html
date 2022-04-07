@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+
+<body>
+    <h1>Classe social</h1>
+    <br><br>
+    Digite sua renda familiar mensal: <input id="ipt_renda">
+    <br><br>
+    <button onclick="analisar()">Analisar renda</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+
+</html>
+
+<script>
+    function analisar() {
+        var renda = ipt_renda.value;
+        if (renda <= 250) {
+            div_resposta.innerHTML = `Classe E`
+        }
+        else if (renda <= 900) {
+            div_resposta.innerHTML = `Classe D`
+        }
+        else if (renda <= 2500) {
+            div_resposta.innerHTML = `Classe C`
+        }
+        else if (renda <= 9500) {
+            div_resposta.innerHTML = `Classe B`
+        }
+        else {
+            div_resposta.innerHTML = `Classe A`
+        }
+    }
+</script>

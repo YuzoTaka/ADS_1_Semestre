@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 20</title>
+</head>
+<body>
+    <h1>Treinamento de funcionário</h1>
+    <br><br>
+    <select id="sel_box1">
+        <option>--Selecionar--</option>
+        <option value="1">Cereais</option>
+        <option value="2">Queijo</option>
+    </select>
+    <br><br>
+    <select id="sel_box2">
+        <option>--Selecionar--</option>
+        <option value="1">Refrigerada</option>
+        <option value="2">Seca</option>
+    </select>
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var produto = sel_box1.value;
+        var area = sel_box2.value;
+        if(produto==1 && area==1){
+            div_resposta.innerHTML = `Retire o cereal da geladeira`
+        }
+        else if(produto==1 && area==2){
+            div_resposta.innerHTML = `Muito bem, ceral no lugar certo`
+        }
+        if(produto==2 && area==1){
+            div_resposta.innerHTML = `Muito bem, queijos no lugar certo`
+        }
+        else if(produto==2 && area==2){
+            div_resposta.innerHTML = `Ponha o queijo na geladeira`
+        }
+
+    }
+</script>

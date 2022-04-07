@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Temometro</h1>
+    <br><br>
+    Digite a temperatura atual: <input id="ipt_temperatura">
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_resposta"></div>
+    
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var temp = ipt_temperatura.value;
+        if(temp<=14){
+            div_resposta.innerHTML = `Congelante`
+        }
+        else if(temp<=21){
+            div_resposta.innerHTML = `Com frio`
+        }
+        else if(temp<=24){
+            div_resposta.innerHTML = `Confortável`
+        }
+        else if(temp<=31){
+            div_resposta.innerHTML = `Com calor`
+        }
+        else{
+            div_resposta.innerHTML = `Calor escaldante`
+        }
+    }
+</script>

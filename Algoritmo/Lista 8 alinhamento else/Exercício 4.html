@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>Nutricionista</h1>
+    <br><br>
+    Digite seu peso: <input id="ipt_peso">
+    <br><br>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var peso = ipt_peso.value;
+        if(peso<=13.5){
+            div_resposta.innerHTML = `Abaixo do peso`
+        }
+        else if(peso>21.2){
+            div_resposta.innerHTML = `Acima do peso`
+        }
+        else if(peso==18.3){
+            div_resposta.innerHTML = `Peso perfeito`
+        }
+        else{
+            div_resposta.innerHTML = `Peso na média`
+        }
+    }
+</script>
