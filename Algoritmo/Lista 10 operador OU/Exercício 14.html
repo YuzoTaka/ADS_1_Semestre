@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Bilhete único</h1>
+    <br><br>
+    <select id="sel_box1">
+        <option>--Selecionar--</option>
+        <option value="1">Comum</option>
+        <option value="2">Estudante</option>
+        <option value="3">Idoso/PNE</option>
+    </select>
+    <br><br>
+    <select id="sel_box2">
+        <option>--Selecionar--</option>
+        <option value="1">Passagem única</option>
+        <option value="2">Passagem integração</option>
+    </select>
+    <br><br>
+    <button onclick="simular()">Simular preço</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function simular(){
+        var box1 = Number(sel_box1.value);
+        var box2 = Number(sel_box2.value);
+        var comum = 1;
+        var estud = 2;
+        var idoso = 0;
+        var unica = 4.40;
+        var int = 5.90;
+        if(box1==1||box1==2 && box2==1){
+            div_msg.innerHTML = `Valor da passagem escolhida: R$ ${(unica/comum).toFixed(2)}.`
+        }
+        else if(box1==1 && box2==2){
+            div_msg.innerHTML = `Valor da passagem escolhida: R$ ${(int/comum).toFixed(2)}.`
+            }       
+        if(box1==2 && box2==1){
+            div_msg.innerHTML = `Valor da passagem escolhida: R$ ${(unica/estud).toFixed(2)}.`
+        }
+        else if(box1==2 && box2==2){
+            div_msg.innerHTML = `Valor da passagem escolhida: R$ ${(int/estud).toFixed(2)}.`
+        }
+        if(box1==3){
+            div_msg.innerHTML = `Sua passagem é gratuita.`
+        }
+    }
+    
+</script>
