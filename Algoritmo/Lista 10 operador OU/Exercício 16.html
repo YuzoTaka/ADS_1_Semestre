@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 16</title>
+</head>
+<body>
+    <h1>Temperatura e umidade</h1>
+    <br><br>
+    Digite a temperatura atual: <input id="ipt_temperatura">
+    <br><br>
+    Digite a umidade do ar: <input id="ipt_umidade">
+    <br><br>
+    <button onclick="avaliar()">Avaliar clima</button>
+
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var temp = ipt_temperatura.value;
+        var umid = ipt_umidade.value;
+        if(umid<0||umid>100){
+            alert(`Valor de umidade inválido`)
+        }
+        else{
+            if(temp>=22&&temp<=23&&umid<60){
+                alert(`Clima agradável`)
+            }
+            else{
+                alert(`Clima desconfortável`)
+            }
+        }
+    }
+</script>

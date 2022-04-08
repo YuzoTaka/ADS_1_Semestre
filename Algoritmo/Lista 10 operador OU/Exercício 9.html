@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10_E09</title>
+</head>
+<body>
+    <h2>Análise de alimentos</h2>
+    Selecione o tipo de alimento:
+    <select id="sel_alimento">
+        <option value="1">Carne bovina</option>
+        <option value="2">Soja</option>
+        <option value="3">Carne suína</option>
+        <option value="4">Legumes</option>
+        <option value="5">Carne de peixe</option>
+        <option value="6">Frutas</option>
+        <option value="7">Ovos</option>
+    </select>
+    <br><br>
+    <button onclick="analisar()">Tipo de alimentação</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var box = sel_alimento.value;
+        if(box==1||box==3||box==5||box==7){
+            div_msg.innerHTML += `Você não pode ser vegano.<br>`
+        }
+        if(box==2||box==4||box==6){
+            div_msg.innerHTML += `Você pode ser vegano<br>`
+        }
+        if(box==2||box==4||box==6||box==7){
+            div_msg.innerHTML += `Você pode ser vegerariano.<br>`
+        }
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
+    <title>Exercício 15</title>
+</head>
+<body>
+    <h1>Banco Melete</h1>
+    <br><br>
+    Login: <input id="ipt_login">
+    <br><br>
+    Senha: <input type="password" id="ipt_senha">
+    <br><br>
+    Informação pessoal: <input id="ipt_inf">
+    <br><br>
+    <button onclick="autenticar()">Autenticar</button>
+    <br><br>
+    <div id="div_msg" style="display: none;">Usuário autenticado</div>
+    <br><br>
+    <div id="div_block" style="display: none;">Usuário BLOQUEADO! Procure seu gerente!!</div>
+    <div id="div_falha" style="display: none;">Falha na autenticação.<br>Você ainda tem <b id="b_vezes">3</b> tentativa(s).</div>
+
+</body>
+</html>
+
+<script>
+    var erro = 3;
+    function autenticar(){
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var inf = ipt_inf.value;
+
+        if(erro<=0) {
+            div_msg.style.display='none'
+        } else if (erro<2) {
+            div_block.style.display='block'
+            div_falha.style.display='none'
+        } else if (login=='ana'&&senha=='braga'&&inf==1960||inf=='louro josé') {
+            div_msg.style.display='block'
+            div_falha.style.display='none'
+            div_block.style.display='none'
+        } else{
+            erro --;
+            b_vezes.innerHTML = `${erro}`
+            div_falha.style.display='block'
+        }
+
+
+    }
+
+    
+</script>

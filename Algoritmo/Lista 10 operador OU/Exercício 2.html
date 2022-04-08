@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Faculdade mentes brilhantes</h1>
+    <br><br>
+    Digite sua nota do ENEM: <input id="ipt_enem">
+    <br><br>
+    Digite sua nota do vestibular: <input id="ipt_vest">
+    <br><br>
+    <button onclick="avaliar()">Avaliação</button>
+
+    
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var enem = ipt_enem.value;
+        var vest = ipt_vest.value;
+        if(enem>800 || vest>=700){
+            alert(`Parabéns! Aprovado 🎉🎉`)
+        }
+        else{
+            alert(`Tente semestre que vem!😔`)
+        }
+    }
+</script>

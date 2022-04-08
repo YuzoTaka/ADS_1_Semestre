@@ -118,29 +118,33 @@
     var preco = 0;
     function calcular(){
         var ax_especie = sel_especie.value;
-        var valor = Number(ipt_compra.value)
+        var valor = Number(ipt_compra.value);
+        var imposto = 0;
+        // var total = preco+imposto;
 
         if(ax_especie==1){
-            preco += valor * 0.05;
+            imposto = valor * 0.05;
             
        }
         else {
             if(ax_especie==2){
-            preco += valor * 0.1;
+            imposto = valor * 0.1;
         }
         }
         
        
-        div_resultado.innerHTML = `O imposto será de R$ ${preco.toFixed(2)}`
+        div_resultado.innerHTML = `O imposto será de R$ ${imposto.toFixed(2)}`
         
     }
 
     function reiniciar(){
-        alert(`Valor total de todos os impostos calculados R$ ${preco.toFixed(2)}`)
+        alert(`Valor total de todos os impostos calculados R$ ${total.toFixed(2)}`);
+        // sel_especie = 0
         sel_oviparo.style.display = `none`
         sel_mamifero.style.display = `none`
         div_img.style.display = 'none'
         div_compra.style.display = 'none'
+        valor = 0
     }
     
 </script>

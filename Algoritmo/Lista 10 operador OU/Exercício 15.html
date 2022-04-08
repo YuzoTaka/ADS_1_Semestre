@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+</head>
+<body>
+    <h1>Banco Melete</h1>
+    <br><br>
+    Login: <input id="ipt_login">
+    <br><br>
+    Senha: <input type="password" id="ipt_senha">
+    <br><br>
+    Informação pessoal: <input id="ipt_inf">
+    <br><br>
+    <button onclick="autenticar()">Autenticar</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+</html>
+
+<script>
+    function autenticar(){
+        var login = ipt_login.value;
+        var senha = ipt_senha.value;
+        var inf = ipt_inf.value;
+        if(login=='ana'&&senha=='braga'&&inf==1960||inf=='lourojosé'){
+            div_msg.innerHTML = `Usuário autenticado`
+        }
+        else{
+            div_msg.innerHTML = `Falha na autenticação`
+        }
+    }
+</script>

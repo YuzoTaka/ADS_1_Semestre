@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L10_E18</title>
+</head>
+<body>
+    <h2>Análise de desempenho de Alunos</h2>
+    Entre com a Nota: <input id="ipt_nota" autofocus> <br>
+    Entre com a Frequência: <input id="ipt_frequencia">
+    <br><br>
+    <button onclick="analisar()">Analisar aluno</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var nota = ipt_nota.value;
+        var freq = ipt_frequencia.value;
+        if(nota<0||nota>10){
+            alert(`Onde já se viu nota menor que 0 ou maior que 10?!`)
+        }
+        if(freq<0||freq>100){
+            alert(`Onde já sei viu frequência menor que 0 ou maior que 100?!`)
+        }
+        else {
+            if(nota>0&&nota<6){
+                div_msg.innerHTML = `Aluno ficou abaixo da média`
+            }
+            if(nota>=6&&nota<=8){
+                div_msg.innerHTML = `Aluno ficou na média`
+            }
+            if(nota>8&&nota<=10){
+                div_msg.innerHTML = `Aluno acima da média`
+            }
+            if(freq>=75){
+                div_msg.innerHML = `Aluno aprovado por frequência`
+            }
+            if(freq<75){
+                div_msg.innerHTML = `Aluno reprovado por frequência`
+            }
+        }
+    }
+</script>
