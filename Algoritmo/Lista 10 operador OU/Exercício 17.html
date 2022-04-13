@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+</head>
+<body>
+    <h1>Arroz do Yoshi</h1>
+    <br><br>
+    <select id="sel_arroz">
+        <option>-- Selecionar --</option>
+        <option value="1">Arroz branco</option>
+        <option value="2">Arroz integral</option>
+    </select>
+    <br><br>
+    Digite o tempo de cozimento: <input id="ipt_tempo" placeholder="Ex. 5 min">
+    <br><br>
+    Digite a quantidade de sal: <input id="ipt_sal" placeholder="Ex. 5g">
+    <br><br>
+    <button onclick="avaliar()">Avaliar</button>
+    <br><br>
+    <div id="div_resposta"></div>
+    
+</body>
+</html>
+
+<script>
+    function avaliar(){
+        var arroz = sel_arroz.value;
+        var tempo = ipt_tempo.value;
+        var sal = ipt_sal.value;
+        if(arroz==1&&tempo==10&&sal<=10){
+            div_resposta.innerHTML = `Arroz perfeito!!` 
+        }
+        else {
+            div_resposta.innerHTML = `Seu arroz não está perfeito`
+        }
+        if(arroz==2&&tempo==20&&sal<=15){
+            div_resposta.innerHTML = `Arroz perfeito!!` 
+        }
+        else{
+            div_resposta.innerHTML = `Seu arroz não está perfeito`
+        }
+    }
+</script>
