@@ -8,19 +8,63 @@
 </head>
 <body>
     <br><br>
-    Digite o intervalo da altura para ser piloto: <input onkeyup="h_pilotar()" id="ipt_piloto">
+    <div id="div_input" style="display: block;">
+    Digite a altura mínima e máxima para ser piloto: 
+    <input id="ipt_piloto_min"> | <input id="ipt_piloto_max">
     <br><br>
-    Digite o intervalo da altura para jogador de basquete: <input>
-
+    Digite a altura mínima para jogador de basquete: 
+    <input id="ipt_basq_min"> | <input id="ipt_basq_max">
+    </div>
+    <br><br>
+    <button onclick="selecionar()">Selecionar</button>
+    <br><br>
+    <div id="div_select" style="display: block;">
+        Nome: <input id="ipt_nome">
+        Altura: <input id="ipt_altura">
+        <select id="sel_modalidade" onchange="responder()">
+            <option value="0">-- Selecionar --</option>
+            <option value="1">Piloto</option>
+            <option value="2">Jogador</option>
+        </select>
+    </div>
+    <br><br>
+    <div id="div_resposta"></div>
+    <button onclick="responder()">responder</button>
     
 </body>
 </html>
 
 <script>
-    function h_pilotar(){
-        var hPilot = ipt_piloto.value;
-        if(hPilot<1 && hPilot<1.90){
-            alert(`Não seguir em frente`)
-        }
+    var altura = 0;
+
+    function selecionar(){
+        div_input.style.display= 'none';
+        div_select.style.display= 'block';
     }
+    function responder(){
+        var pilotoMin = ipt_piloto_min.value;
+        var pilotoMax = ipt_piloto_max.value;
+        var basqMin = ipt_basq_min.value;
+        var basqMax = ipt_basq_max.value;
+        var nome = ipt_nome.value;
+        var h = ipt_altura.value
+        var modali = sel_modalidade.value;
+        if(modali == 0){
+            div_resposta.innerHTML = ''
+        }
+        if(modali == 1 && h>pilotoMin && h<pilotoMax){
+            div_resposta.innerHTML = `O candidato ${nome} com altura de ${h} participará do processo de seleção de piloto`
+        }
+        else if(h<pilotoMin && h>pilotoMax){
+            div_resposta.innerHTML = `Infelizmente o candidato ${nome} com altura de ${h} não atende os requisitos`
+        }
+        if(modali == 2 && h>basqMin && h<basqMax){
+            div_resposta.innerHTML = `O candidato ${nome} com altura de ${h} participará do processo de seleção de jogador de basquete`
+            }
+        else if(h<basqMin && h>basqMax){
+            div_resposta.innerHTML = `Infelizmente o candidato ${nome} com altura de ${h} não atende os requisitos`
+        }
+        }
+    
+    
 </script>
