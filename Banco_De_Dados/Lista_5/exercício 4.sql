@@ -53,12 +53,13 @@ porém somente de um determinado treinador orientador (informar o nome do treina
 */
 SELECT * FROM treinador AS novato JOIN treinador AS experiente ON novato.idTreinador = experiente.fkExperiente WHERE novato.nomeTreinador = 'Rafael';
 
+
 -- Exibir os dados dos treinadores, os dados dos respectivos nadadores e os dados dos respectivos treinadores orientadores.
-/*SELECT * FROM treinador JOIN nadador ON idTreinador = fkTreinador;
-Não consegui fazer.
-*/
+SELECT * FROM treinador as novato JOIN treinador as experiente ON novato.idTreinador = experiente.fkExperiente JOIN nadador ON experiente.idTreinador = nadador.fkTreinador;
+
+
 -- Exibir os dados de um treinador (informar o seu nome na consulta), os dados dos respectivos nadadores e os dados do seu treinador orientador.
-SELECT * FROM treinador JOIN treinador as novato ON treinador.idTreinador = novato.fkNovato WHERE treinador.nomeTreinador = 'roberto';
+
 
 
 
@@ -97,6 +98,7 @@ SELECT CONCAT('O treinador ', novato.nomeTreinador, ' é orientado pelo(a) ', ex
 	ON novato.idTreinador = nadador.fkTreinador;
 
 
+-- TABELAS DEPENDENTES TEM Q TER CHAVE PRIMARIA COMPOSTA
 
 DROP DATABASE treinador;
 
