@@ -1,0 +1,41 @@
+Importância: 
+Melhora a comunicação, cria eficiência, aumenta a produtividade, cumprir metas, e competitividade no mercado. Caso não tenha ela, é comum de acontecer problemas de conectividade, produtividade e segurança. 
+
+
+Componentes:
+        Hardware:
+•    Computadores desktop
+•    Servidores
+•    Data centers
+•    Hubs
+•    Roteadores
+•    Comutadores
+•    Instalações
+
+        Software:
+•    Content management systems (CMS)
+•    Gerenciamento do relacionamento com o cliente (CRM)
+•    Planejamento de recursos corporativos (ERP)
+•    Sistemas operacionais
+•    Servidores da web
+
+        Rede:
+
+
+
+Infraestrutura ideal:
+-Sistema de armazenamento de alto desempenho que armazenam e fazem back-up de dados e incluem sistema de recuperação de dados em caso de desastres;
+-Rede de baixa latência usam componentes de infraestrutura de nível corporativo para reduzir o atraso de fluxo de dados;
+-Tempo de inatividade zero tem como objetivo reduzir as interrupções nas operações de negócios e elimina o tempo de inatividade do sistema, reduzindo os gastos e aumentando a lucratividade;
+
+
+Gerenciamento da infraestrutura:
+
+	Gerenciamento do sistema operacional: fornece controle sobre conteúdo, patches, provisionamento e subscrição para supervisionar os ambientes que executam o mesmo sistema operacional.
+
+	Gereciamento da nuvem: fornece ao administrador de nuvem controle sobre tudo que está sendo executado, como serviços, aplicações, dados e usuário final
+
+	Gerenciamento de riscos: identifica e avalia os riscos e, em seguida, cria planos para minimizá-los ou controlá-los, reduzindo os possíveis impactos.
+	
+
+
