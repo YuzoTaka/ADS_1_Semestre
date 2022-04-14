@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 14</title>
+</head>
+
+<body>
+    <div id="div_1" style="display: block;">
+        Digite altura mínima para ser piloto: <input id="ipt_pilot_min">
+        Digite altura máxima para ser piloto: <input id="ipt_pilot_max">
+        <br><br>
+        Digite altura mínima para ser jogador: <input id="ipt_jog_min">
+        Digite altura máxima para ser jogador: <input id="ipt_jog_max">
+        <br><br>
+        <button onclick="selecionar()">Selecionar</button>
+    </div>
+    <br><br>
+    <div id="div_2" style="display: none;">
+        - Título: “Processo de Seleção de novos atletas”
+        <br>
+        - Subtítulo: Critério de Seleção de piloto – altura entre <b id="b_pilot_min"></b> até <b id="b_pilot_max"></b>
+        <br>
+        - Subtítulo: Critério de Seleção de jogador de basquete – altura entre <b id="b_jog_min"></b> até <b
+            id="b_jog_max"></b>
+        <br><br>
+        Nome: <input id="ipt_nome">
+        <br><br>
+        Altura: <input id="ipt_altura">
+        <br><br>
+        <select id="sel_box1">
+            <option value="1">Piloto</option>
+            <option value="2">Jogador</option>
+        </select>
+        <br><br>
+        <button onclick="analisar()">Analisar</button>
+        <br><br>
+        <div id="div_resposta"></div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    var h = 0;
+    function selecionar(){
+        div_1.style.display='none';
+        div_2.style.display='block';
+    }
+    function analisar() {
+        var pilotMin = ipt_pilot_min.value;
+        var pilotMax = ipt_pilot_max.value;
+        var jogMin = ipt_jog_min.value;
+        var jogMax = ipt_jog_max.value;
+        var nome = ipt_nome.value;
+        var h = ipt_altura.value;
+        b_pilot_min.innerHTML = `${pilotMin}`
+        b_pilot_max.innerHTML = `${pilotMax}`
+        b_jog_min.innerHTML = `${jogMin}`
+        b_jog_max.innerHTML = `${jogMax}`
+
+        if (h > pilotMin && h < pilotMax) {
+            div_resposta.innerHTML = `O candidato <b>${nome}</b> com altura de <b>${h}</b> participará do processo de seleção de piloto`
+        }
+        else if (h > jogMin && h < jogMax) {
+            div_resposta.innerHTML = `O candidato <b>${nome}</b> com altura de <b>${h}</b> participará do processo de seleção de jogador de basquete.`
+        }
+        else {
+            div_resposta.innerHTML = `Infelizmente o candidato <b>${nome}</b> com altura de <b>${h}</b> não atende os requisitos`
+        }
+    }
+</script>

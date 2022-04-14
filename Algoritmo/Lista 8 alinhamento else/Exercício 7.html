@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 7</title>
+</head>
+<body>
+    <h1>Poder de compra</h1>
+    <br><br>
+    Digite o valor enconomizado:
+    <input id="ipt_valor">
+    <br><br>
+    <button onclick="poder()">Poder de compra</button>
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function poder(){
+        var valor = ipt_valor.value;
+        if(valor<=0){
+            div_resposta.innerHTML = `Nada de compras :(`
+        }
+        else if(valor<=100){
+            div_resposta.innerHTML = `Viagem de ida e volta pra Praia Grande`
+        }
+        else if(valor<4000){
+            div_resposta.innerHTML = `Uma boa moto usada`
+        }
+        else if(valor>=4000){
+            div_resposta.innerHTML = `Mais alguma bobagem legal.`
+        }
+    }
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+<body>
+    <h1>Covid-19</h1>
+    <br><br>
+    Quantos pães franceses come por dia:
+    <input id="ipt_pao">
+    <br><br>
+    Quantos pacotes de bolacha come por dia:
+    <input id="ipt_bolacha">
+    <br><br>
+    Quantos copos de achocolatado toma por dia:
+    <input id="ipt_copos">
+    <br><br>
+    <button onclick="verificar()">Verificar calorias</button>
+    <br><br>
+    <div id="div_resposta"></div>
+    
+</body>
+</html>
+
+<script>
+    function verificar(){
+        var pao = Number(ipt_pao.value);
+        var bolacha = Number(ipt_bolacha.value);
+        var copos = Number(ipt_copos.value);
+        var paoCal = pao*50;
+        var bolCal = bolacha*80;
+        var copoCal = copos*70;
+        var total = paoCal+bolCal+copoCal;
+        if(total<200){
+            div_resposta.innerHTML = `Parabéns, vai sair em forna da quarentena!!`
+        }
+        else if(total<=400){
+            div_resposta.innerHTML = `Cuidado, vai ficar mais "fofinhx" após quarentena`
+        }
+        else if(total>400){
+            div_resposta.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena.`
+        }
+    }
+</script>
