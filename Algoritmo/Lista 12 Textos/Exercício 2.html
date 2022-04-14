@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Verificar nome</h1>
+    <br><br>
+    Digite seu nome:
+    <input onkeyup="digitar()" id="ipt_nome">
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function digitar(){
+        var nome = (ipt_nome.value).length;
+        if(nome<=10){
+            div_resposta.innerHTML = `Nome OK`
+        }
+        else{
+            div_resposta.innerHTML = `Nome deve ter pelo menos 10 letras`
+        }
+    }
+</script>

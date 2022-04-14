@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+</head>
+<body>
+    <h1>Verificar usuário</h1>
+    <br><br>
+    Digite seu usuário:
+    <input onkeyup="digitar()" id="ipt_usuario">
+    <br><br>
+    <div id="div_resposta"></div>
+
+</body>
+</html>
+
+<script>
+    function digitar(){
+        var usuarioStart = (ipt_usuario.value).trimStart();
+        if(usuarioStart){
+            div_resposta.innerHTML = `Nome OK` 
+        }
+        else{
+            div_resposta.innerHTML = `Nome inválido`
+        }
+    }
+</script>
