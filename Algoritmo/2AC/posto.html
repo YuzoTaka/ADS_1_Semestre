@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Posto</title>
+
+</head>
+
+
+
+<body>
+
+    <h2>Posto Estrela - Controle de Vendas</h2>
+
+
+
+    <div id="div_abertura" style="display: block;">
+
+        <h3>------------------Abertura do Posto------------------</h3>
+
+        Entre com o volume de Etanol do tanque:
+
+        <input id="ipt_etanol"> <br>
+
+        Entre com o volume de Gasolina do tanque:
+
+        <input id="ipt_gasolina"> <br>
+
+        <button onclick="abrir()">Abrir o Posto</button> <br>
+
+        <div id="div_msg_abertura"></div>
+
+    </div>
+
+
+
+    <div id="div_venda" style="display: none;">
+
+        <h3>-------Registro das Operações de venda do turno--------</h3>
+
+        Entre com o volume vendido:
+
+        <input id="ipt_venda">
+
+        Informe o produto vendido:
+
+        <select id="sel_produto">
+
+            <option value="s">--Selecione--</option>
+
+            <option value="e">etanol</option>
+
+            <option value="g">gasolina</option>
+
+        </select>
+
+        <button onclick="registrar()">Registrar a Venda</button>
+
+        <button onclick="encerrar()" style="background-color: red;">Encerrar o Turno</button>
+
+        <br><br>
+
+        <span id="span_msg"></span>
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var ax_gasol = 0;
+    var ax_etanol = 0;
+    var et = 0;
+    var gas = 0;
+    var qtd_et = 0;
+    var qtd_gas = 0;
+    var venda = 0;
+    var resto = 0;
+    function abrir() {
+        var ax_etanol = Number(ipt_etanol.value);
+        var ax_gasol = Number(ipt_gasolina.value);
+        if(ax_etanol<300) {
+            div_msg_abertura.innerHTML = `ERRO - Com esse volume de Etanol não dá para abrir o posto`
+        }else {
+            if(ax_etanol>=300 && ax_etanol<=3000) {
+                div_msg_abertura.innerHTML = `AVISO - Chame o reabastecimento de Etanol`
+                div_abertura.style.display = 'none'
+            }
+            if(ax_etanol>3000) {
+                div_abertura.style.display = 'none'
+            }
+        }
+        if (ax_gasol<200){
+            div_msg_abertura.innerHTML = `ERRO - Com esse volume de Gasolina não dá para abrir o posto`
+        }else {
+            if(ax_gasol>=200&&ax_gasol<=2000){
+                div_msg_abertura.innerHTML = `AVISO - Chame o reabastecimento de Gasolina`
+                div_abertura.style.display = 'none'
+            }
+            if(ax_gasol>2000){
+                div_abertura.style.display = 'none'
+            }     
+        }
+        div_venda.style.display = 'block'
+    }
+    function registrar(){
+        var venda = Number(ipt_venda.value);
+        var ax_etanol = Number(ipt_etanol.value);
+        var ax_gasol = Number(ipt_gasolina.value);
+        var produto = sel_produto.value;
+        var et  = ax_etanol-venda;
+        var gas = ax_gasol-venda;       
+        if(produto=='e'&& venda<=ax_etanol){
+            span_msg.innerHTML = `Com a venda de ${venda} de Etanol o saldo no tanque é de ${et}`
+            et += ax_etanol-venda;
+            venda1 = venda;
+            qtd_et ++     
+        }
+        else if(produto=='g'&&venda<=ax_gasol){
+            span_msg.innerHTML = `Com a venda de ${venda} de Gasolina o saldo no tanque é de ${gas}`
+            venda2 = venda;
+            gas += ax_gasol-venda;
+            qtd_gas ++     
+        }
+    }
+    function encerrar(){
+        var ax_etanol = Number(ipt_etanol.value);
+        var ax_gasol = Number(ipt_gasolina.value);
+        var et = ax_etanol-venda1;
+        var gas = ax_gasol-venda2;
+        var media1 = venda1/qtd_et;
+        var media2 = venda2/qtd_gas;
+
+        span_msg.innerHTML = `<b>Venda de Etanol</b><br>
+        Saldo de produto no tanque = ${et}<br>
+        Volume total vendido = ${venda1}<br>
+        Quantidade de vendas = ${qtd_et}<br>
+        Média das vendas = ${media1.toFixed(0)}<br><br>
+
+        <b>Venda de Gasolina</b><br>
+        Saldo de produto no tanque = ${gas}<br>
+        Volume total vendido = ${venda2}<br>
+        Quantidade de vendas = ${qtd_gas}<br>
+        Média das vendas = ${media2.toFixed(0)}`
+
+
+    }
+
+</script>
