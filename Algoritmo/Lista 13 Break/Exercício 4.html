@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+</head>
+<body>
+    <h1>Casal</h1>
+    <br><br>
+    <button onclick="pares()">Exibir pares</button>
+    <br><br>
+    <div id="div_msg"></div>
+    
+</body>
+</html>
+
+<script>
+    var min = 0;
+    var max = 100;
+    function pares(){
+        while(min<=100){
+            if(min%2==0){
+                div_msg.innerHTML += `${min}<br>`
+            }
+            min++;
+        }
+    }
+</script>

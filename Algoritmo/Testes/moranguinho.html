@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moranguinho</title>
+</head>
+
+<body>
+    <h1>Barraca de morango do sr.Hideo</h1>
+    <br><br>
+    <div id="div_abrir">
+        Digite a quantidade de caixas de morangos que foram colhidas e serão vendidas:
+        <input id="ipt_qntd">
+        <br><br>
+        <button onclick="abrir()">Abrir venda</button>
+    </div>
+    <div id="div_vendas" style="display: block;">
+        <input id="ipt_vendas" placeholder="Quantidade vendida">
+        <input id="ipt_valor" placeholder="Preço da caixa de morango">
+        <button onclick="validar()">Validar venda</button>
+        <button onclick="registrar()">Registrar venda</button>
+        <button onclick="encerrar()">Encerrar as vendas</button>
+        <span id="span_validacao"></span>
+        <br><br>
+        <div id="div_registrar"></div>
+        <br><br>
+        <div id="div_encerrar"></div>
+        <br><br>
+        <div id="div_dia"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var vezes = 0;
+    var preco = 0;
+    var saldo = 0;
+    var caixas = 0;
+    var precoTotal = 0;
+    var ax_qntd = 0;
+    var media = 0;
+    var volTotal = 0;
+    var vol = 0;
+    var max = 0;
+    var venda = 0;
+    var precoMax = 0;
+    function abrir() {
+        var ax_qntd = Number(ipt_qntd.value);
+        if (ax_qntd < 100) {
+            alert(`ERRO - Com esse volume de Morangos não dá para abrir as vendas`)
+
+        } else {
+            if (ax_qntd > 2000) {
+                alert(`AVISO – Tudo isso!!! Verificar se a quantidade está correta`)
+            }
+            else if (ax_qntd <= 2000 && ax_qntd >= 100) {
+                div_abrir.style.display = 'none'
+                div_vendas.style.display = 'block'
+            }
+        }
+    }
+
+    function validar() {
+        var ax_qntd = Number(ipt_qntd.value);
+        var caixas = Number(ipt_vendas.value);
+        var preco = Number(ipt_valor.value);
+        if ((caixas < 20 && preco >= 5 && preco <= 6) || (caixas >= 20 && caixas <= 40 && preco >= 4.50 && preco <= 5.50) || (caixas > 40 && preco >= 4 && preco <= 5)) {
+            span_validacao.innerHTML = `Valor OK`
+        }
+        else {
+            span_validacao.innerHTML = `Valor errado para essa quantidade vendida`
+        }
+        saldo = ax_qntd;
+    }
+
+    function registrar() {
+        if(ipt_vendas.value>caixas){
+            max = Number(ipt_vendas.value)
+        }
+        var caixas = Number(ipt_vendas.value);
+        var preco = Number(ipt_valor.value);
+        venda = preco;
+        saldo -= caixas;
+        precoTotal +=preco;
+        media = preco/vezes;
+        volTotal += caixas;
+        if(saldo>=0){
+        div_registrar.innerHTML = `Com a venda de ${caixas.toFixed(0)} de caixas de Morango o saldo no restante é de ${saldo.toFixed(0)}.`
+        vezes ++;
+        }
+        else{
+            div_registrar.innerHTML = `Erro, já acabou os morangos.`
+        }
+    }
+    function encerrar() {
+        var caixas = Number(ipt_vendas.value);
+        var preco = Number(ipt_valor.value);
+        div_encerrar.innerHTML = `
+        <b>Venda de Morangos:</b><br>
+        Saldo de produto = ${saldo}<br>
+        Volume total vendido = ${volTotal}<br>
+        Valor total das vendas = R$ ${precoTotal.toFixed(2)}<br>
+        Valor médio das vendas = R$ ${media}`
+        if(media>=5||volTotal>1000&&saldo<100){
+            
+                div_dia.innerHTML = `
+                <b>O turno hoje foi normal</b><br>
+                O maior volume vendido foi de: ${max}<br>
+                O maior valor de venda foi de R$ ${precoMax.toFixed(2)}`
+            }
+        else{
+                precoMax = venda
+                div_dia.innerHTML = `
+                <b>O turno hoje foi normal</b><br>
+                O maior volume vendido foi de: ${max}<br>
+                O maior valor de venda foi de R$ ${precoMax.toFixed(2)}`
+            }
+            
+            
+        }
+
+</script>
