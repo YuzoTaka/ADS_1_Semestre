@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Primos</title>
+</head>
+
+<body>
+    <h1>Números primos</h1>
+    <br><br>
+    Número inicial: <input id="ipt_inicial">
+    <br><br>
+    Número final: <input id="ipt_final">
+    <br><br>
+    <button onclick="analisar()">Analisar</button>
+    <br><br>
+    <div id="div_msg"></div>
+    <br><br>
+    <div id="div_final"></div>
+
+</body>
+
+</html>
+
+<script>
+    var total = 0;
+    function analisar() {
+        div_msg.innerHTML = ``
+        var inicial = Number(ipt_inicial.value);
+        var final = Number(ipt_final.value);
+        var intervalo = final - inicial + 1
+        if (inicial > 0 && final > inicial) {
+            while (inicial <= final) {
+                if (inicial % 2 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 2 `
+                    total++;
+                }
+                if (inicial % 3 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 3 `
+                    total++;
+                }
+                if (inicial % 5 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 5`
+                    total++;
+                }
+                if (inicial % 7 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 7 `
+                    total++;
+                }
+                if (inicial % 11 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 11 `
+                    total++;
+                }
+                if (inicial % 13 == 0) {
+                    div_msg.innerHTML += ` O número ${inicial} é divisível por 13 `
+                    total++;
+                }
+                if (inicial % 2 != 0 && inicial % 3 != 0 && inicial % 5 != 0 && inicial % 7 != 0 && inicial % 11 != 0 && inicial % 13 != 0) {
+                    div_msg.innerHTML += ` O número ${inicial} não é divisível pelos principais números primos `
+                }
+                inicial++;
+                div_msg.innerHTML += `<br>`
+            }
+            div_final.innerHTML = `O intervalo de ${ipt_inicial.value} a ${ipt_final.value}, tem ${intervalo} números, sendo que ${total} são divisíveis por algum número primo`
+        }
+        else {
+            div_msg.innerHTML = `Valores inválidos`
+            div_final.innerHTML = ``
+        }
+    }
+
+
+
+</script>
