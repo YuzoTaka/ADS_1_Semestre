@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <h1>Café com leite</h1>
+    <br><br>
+    Quantas xícaras de café com leite já bebeu na vida?
+    <input type="text" id="ipt_xicaras">
+    <br><br>
+    <button onclick="ver()">Ver quantidade</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var xica = Number(ipt_xicaras.value)
+        div_msg.innerHTML = ``
+        for(var cont = 1; cont<=xica; cont++){
+            div_msg.innerHTML += `☕☕🥛<br>`
+        }
+    }
+
+</script>

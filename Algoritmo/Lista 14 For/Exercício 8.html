@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+</head>
+
+<body>
+    <h1>Programa muito superior</h1>
+    <br><br>
+    Número mínimo: <input id="ipt_min">
+    <br><br>
+    Número máximo: <input id="ipt_max">
+    <br><br>
+    <button onclick="contar()">Contar</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function contar() {
+        div_msg.innerHTML = ``
+        var min = Number(ipt_min.value);
+        var max = Number(ipt_max.value);
+        if (min <= 1 || max >= 100) {
+            div_msg.innerHTML = `Números inválidos`
+        }
+        else {
+            for (; min <= max; min++) {
+                div_msg.innerHTML += `${min}<br>`
+            }
+        }
+    }
+</script>

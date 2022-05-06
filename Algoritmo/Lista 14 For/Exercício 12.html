@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <h1>Coca-Cola</h1>
+    <br><br>
+    Quantas Coca-colas já bebeu na sua vida?
+    <input type="text" id="ipt_coca">
+    <br><br>
+    <button onclick="ver()">Ver quantidade</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    function ver(){
+        var coca = Number(ipt_coca.value);
+        div_msg.innerHTML = ``
+        for(var cont = 1 ; cont<=coca; cont++){
+            div_msg.innerHTML += `🥤`
+        }
+    }
+
+</script>
