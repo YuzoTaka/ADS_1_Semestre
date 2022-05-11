@@ -39,7 +39,6 @@ INSERT INTO matricula VALUES
 (null, 50001, 100, '2022-01-20', 'A3'),
 (null, 50002, 102, '2022-03-11', 'I3');
 
-
 SELECT * FROM aluno;
 SELECT * FROM curso;
 SELECT * FROM matricula;
@@ -58,7 +57,7 @@ INSERT INTO curso VALUES
 
 
 SELECT * FROM aluno RIGHT JOIN matricula ON ra = fkAluno RIGHT JOIN curso ON fkCurso = idCurso
-WHERE fkCurso IS null 
+WHERE fkCurso IS null
 UNION
 SELECT * FROM curso LEFT JOIN matricula ON fkCurso = idCurso LEFT JOIN aluno ON fkAluno = ra
 WHERE fkCurso IS null;
@@ -68,5 +67,9 @@ FROM matricula m
 JOIN aluno a ON m.fkAluno = a.ra 
 JOIN curso c ON c.idCurso = m.fkCurso
 GROUP BY nome;
+
+SELECT CONCAT(ra, ' ', nome) aluno FROM aluno;
+
+SELECT CONCAT('O aluno ', nome, 'com ra ', ra) historia FROM aluno;
 
 
