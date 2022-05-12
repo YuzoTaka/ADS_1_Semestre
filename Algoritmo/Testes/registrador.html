@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrador</title>
+</head>
+
+<body>
+    <h1>Registrador</h1>
+    <br><br>
+    <input id="ipt_regis">
+    <br><br>
+    <button onclick="registrar()">Registrar</button>
+    <br><br>
+    <button onclick="encerrar()">Encerrar</button>
+    <br><br>
+    <div id="div_regis"></div>
+    <br><br>
+    <div id="div_ence"></div>
+
+</body>
+
+</html>
+
+<script>
+    var i = 0;
+    var numero = 0;
+    var maior = 15;
+    var menor = 23;
+    var media = 0;
+
+    function registrar() {
+        var regis = Number(ipt_regis.value);
+        if (regis >= 15 && regis <= 23) {
+            if (regis > maior) {
+                maior = regis;
+            }
+            if (regis < menor) {
+                menor = regis;
+            }
+            div_regis.innerHTML += `${regis}<br>`
+            numero += regis
+            i++;
+        } else {
+            alert(`Número inválido`)
+        }
+    }
+
+    function encerrar() {
+        media = numero / i;
+        div_ence.innerHTML = `Maior número :${maior}<br>
+                                Menor Número: ${menor}<br>
+                                Média: ${media}`
+    }
+
+
+
+
+</script>
