@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+
+<body>
+    <h1>Projetinho</h1>
+    <br><br>
+    Nome do projeto: <input type="text" id="ipt_projeto">
+    <br><br>
+    <button onclick="registrar()">Registrar projeto</button>
+    <br><br>
+    <button onclick="mostrar()">Mostrar projetos</button>
+    <br><br>
+    <div id="div_registro"></div>
+    <br><br>
+    <div id="div_projetos"></div>
+</body>
+
+</html>
+
+<script>
+    var i = 0;
+    var nivel;
+    var proj = [];
+    function registrar() {
+        i++
+        var projeto = ipt_projeto.value;
+        proj.push(projeto)
+        if (i >= 0 && i <= 4) {
+            nivel = 'Júnior'
+        }else if(i>=5&&i<=12){
+            nivel = 'Pleno'
+        }else if(i>=13){
+            nivel = 'Sênior'
+        }        
+        div_registro.innerHTML = `Você já fez <b>${i}</b> projetos. Por isso você é um profissional ${nivel}`
+    }
+    function mostrar(){
+        div_projetos.innerHTML = ``
+        for(var n = proj.length-1; n>=0;n--){
+        div_projetos.innerHTML += `${proj[n]}<br>`
+        }
+    }
+
+</script>

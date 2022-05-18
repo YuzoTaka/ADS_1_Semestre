@@ -17,7 +17,7 @@
         <br><br>
         <button onclick="abrir()">Abrir venda</button>
     </div>
-    <div id="div_vendas" style="display: block;">
+    <div id="div_vendas" style="display: none;">
         <input id="ipt_vendas" placeholder="Quantidade vendida">
         <input id="ipt_valor" placeholder="Preço da caixa de morango">
         <button onclick="validar()">Validar venda</button>
@@ -106,8 +106,7 @@
         Volume total vendido = ${volTotal}<br>
         Valor total das vendas = R$ ${precoTotal.toFixed(2)}<br>
         Valor médio das vendas = R$ ${media}`
-        if(media>=5||volTotal>1000&&saldo<100){
-            
+        if(media>=5||volTotal>1000&&saldo<100){       
                 div_dia.innerHTML = `
                 <b>O turno hoje foi normal</b><br>
                 O maior volume vendido foi de: ${max}<br>

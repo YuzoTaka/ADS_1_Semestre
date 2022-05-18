@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+<body>
+    <h1>Caronas</h1>
+    <br><br>
+    Quantas pessoas cabem no carro?
+    <input type="text" id="ipt_qntd">
+    <br><br>
+    Quantidade de pessoas que vão de carona?
+    <input type="text" id="ipt_carro">
+    <br><br>
+    <button onclick="partir()">#Partiu Carona</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    var cont = 1;
+    function partir(){
+        var qntd = Number(ipt_qntd.value)
+        var carro = Number(ipt_carro.value)
+        while(cont<=carro){
+            if(qntd==1){
+                div_msg.innerHTML += `Entrou o ${cont} passageiro(que é o(a) motorista<br>`
+            }
+            if(qntd>1&&qntd<=carro){
+            div_msg.innerHTML += `Entrou o ${cont} passageiro<br>`
+            }
+            else{
+                div_msg.innerHTML += `O ${cont} terá que esperar!<br>`
+            }
+        cont++;
+        }
+    }
+
+</script>

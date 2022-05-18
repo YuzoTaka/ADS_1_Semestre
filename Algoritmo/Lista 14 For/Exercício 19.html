@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 19</title>
+</head>
+
+<body>
+    <h1>Idade</h1>
+    <br><br>
+    Digite sua idade: <input id="ipt_idade">
+    <br><br>
+    <button onclick="verificar()">Verificar</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    function verificar() {
+        var n = 0;
+        div_msg.innerHTML = ``
+        var idade = Number(ipt_idade.value);
+        for (var n = 0; n <= idade; n++) {
+            if (n<= 4) {
+                div_msg.innerHTML += `${n} anos(Primeira infância)<br>`
+            }
+            if (n>4 && n<= 6) {
+                div_msg.innerHTML += `${n} anos(Pré-escolar)<br>`
+            }
+            if (n>6 && n <= 10) {
+                div_msg.innerHTML += `${n} anos(Segunda infância)<br>`
+            }
+            if (n>10 && n <= 18) {
+                div_msg.innerHTML += `${n} anos(Adolescência)<br>`
+            }
+            if (n>18 && n <= 50) {
+                div_msg.innerHTML += `${n} anos(Adulto)<br>`
+            }if (n>50 && n <= 100) {
+                div_msg.innerHTML += `${n} anos(Melhor Idade)<br>`
+            }if (n > 100) {
+                div_msg.innerHTML += `${n} anos(Matusalém)<br>`
+            }
+        }
+        div_msg.innerHTML += `<br>Você tem ${idade} anos.`
+    }
+
+
+</script>

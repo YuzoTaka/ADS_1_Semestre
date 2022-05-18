@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 20</title>
+</head>
+<body>
+    <h1>SpTech Maps</h1>
+    <br><br>
+    Quantos ônibus precisa pegar?
+    <input type="text" id="ipt_bus">
+    <br><br>
+    Quantos trens precisa pegar?
+    <input type="text" id="ipt_trem">
+    <br><br>
+    Quantos metros precisa pegar?
+    <input type="text" id="ipt_metro">
+    <br><br>
+    <button onclick="partir()">#Partiu Trajeto</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+</html>
+
+<script>
+    var b = 1;
+    var t = 1;
+    var m = 1;
+    function partir(){
+        b = 1;
+        t = 1;
+        m = 1;
+        div_msg.innerHTML = ``
+        var bus = Number(ipt_bus.value);
+        var trem = Number(ipt_trem.value);
+        var metro = Number(ipt_metro.value);
+        while(b<=bus){
+            div_msg.innerHTML += `<b style="color: red;">Pegando o ${b}° busão</b><br>`
+            b++;
+        }
+        while(t<=trem){
+            div_msg.innerHTML += `<b style="color: green;"> Pegando o ${t}° trem</b><br>`
+            t++
+        }
+        while(m<=metro){
+            div_msg.innerHTML += `<b style="color: blue;"> Pegando o ${m}° metro</b><br>`
+            m++
+        }
+    }
+
+</script>
