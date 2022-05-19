@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+
+<body>
+    <h1>Futebol do Frizza</h1>
+    <br><br>
+    <select id="sel_combo">
+        <option>Indique o resultado</option>
+        <option value="1">Vitória</option>
+        <option value="2">Empate</option>
+        <option value="3">Derrota</option>
+    </select>
+    <br><br>
+    <button onclick="registrar()">Registrar jogo</button>
+    <br><br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var pontos = [];
+    var win = 0;
+    var draw = 0;
+    var lose = 0;
+    var placar = 0;
+    function registrar() {
+        var pont = sel_combo.value;
+        if (pont == 1) {
+            pontos.push(3);
+            win+=3;
+            placar++;
+        } else if (pont == 2) {
+            pontos.push(1);
+            draw+=1
+            placar++;
+        } else if (pont == 3) {
+            pontos.push(0);
+            lose++;
+            placar++;
+        }
+            
+        div_msg.innerHTML =
+            `O time teve: ${win/3} vitórias, ${draw} empates, ${lose} derrotas<br>
+            Pontuação total: ${placar} pontos<br>
+            Aproveitamento: Y%`
+    }
+
+</script>

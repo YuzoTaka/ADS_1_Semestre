@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+</head>
+
+<body>
+    <h1>Mercado do Frizza</h1>
+    <br><br>
+    <input type="text" id="ipt_preco">
+    <br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br><br>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <br><br>
+    <div id="div_msg"></div>
+</body>
+
+</html>
+
+<script>
+    var produtos = [];
+    var cadastro = 0;
+    var total = 0;
+    function cadastrar() {
+        var preco = Number(ipt_preco.value);
+        cadastro++;
+        produtos.push(preco);
+    }
+
+    function atualizar() {
+        for (i = 0; i < produtos.length; i++) {
+            total += produtos[i]
+        }
+        div_msg.innerHTML = `Você tem ${cadastro} produtos cadastrados em estoque
+                            Seu estoque vale R$ ${total.toFixed(2)}`
+
+
+    }
+
+</script>
