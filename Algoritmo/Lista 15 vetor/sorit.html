@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associação SORIT</title>
+</head>
+
+<body>
+    <h1>Associação SORIT</h1>
+    <br><br>
+    <div id="part_1">
+        Digite sua idade: <input type="text" id="ipt_idade">
+        <br><br>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <br><br>
+        <div id="div_idade"></div>
+        <br><br>
+    </div>
+    <div id="part_2">
+        Intervalo inicial: <input type="text" id="ipt_inicial">
+        <br><br>
+        Intervalo final: <input type="text" id="ipt_final">
+        <br><br>
+        <button onclick="analisar()">Analisar ocorrências</button>
+        <br><br>
+        <div id="div_resumo1"></div>
+        <br><br>
+        <div id="div_resumo2"></div>
+        <br><br>
+        <div id="div_ocorrencia"></div>
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+    var validacao1 = false;
+    var validacao2 = false;
+
+    var cadastro = [];
+    var intervalo = [];
+
+    var inicial = 0;
+    var final = 0;
+    var maior = 99;
+    var menor = 0;
+    var soma = 0;
+    var media = 0;
+
+    function cadastrar() {
+        var idade = Number(ipt_idade.value);
+        if (idade < 18) {
+            alert('Idade inferir à permitida');
+            validacao1 = false;
+        } else if (idade >= 65 && idade <= 80) {
+            alert('Associação permitida, mas com algumas restrições');
+            validacao1 = true;
+            cadastro.push(idade);
+        } else if (idade > 80) {
+            alert('Idade superior à permitida');
+            validacao1 = false;
+        } else {
+            validacao1 = true;
+            cadastro.push(idade);
+        }
+        div_idade.innerHTML = ``;
+        for (i = cadastro.length - 1; i >= 0; i--) {
+            div_idade.innerHTML += `${cadastro[i]}<br>`
+        }
+    }
+
+    function analisar() {
+        var inicial = Number(ipt_inicial.value);
+        var final = Number(ipt_final.value);
+        if (cadastro.length == 0) {
+            validacao2 = false;
+            alert('Antes de Analisar faça o cadastro das idades')
+        } else if (inicial >= final) {
+            validacao2 = false;
+            alert('Informar o intervalo de ocorrências corretamente')
+        } else {
+            validacao2 = true;
+        }
+        for (n = 0; n < cadastro.length; n++) {
+
+            if (cadastro[n] < maior) {
+                maior = cadastro[n]
+            }
+            if (cadastro[n] > menor) {
+                menor = cadastro[n];
+            }
+            if (cadastro[n] >= inicial && cadastro[n] <= final) {
+                intervalo.push(cadastro[n]);
+            }
+        }
+        for (x = 0; x < intervalo.length; x++) {
+            soma += intervalo[x];
+            media = soma / intervalo.length;
+        }
+
+        if (validacao2 == true) {
+            div_resumo1.innerHTML = `
+            Inicial: ${inicial} <br>
+            Final: ${final}<br>
+            <b>Resumo do intervalo de ocorrências</b><br>
+            Menor Idade do intervalo: ${maior}<br>
+            Maior Idade do intervalo: ${menor}<br>
+            Qtde de idades cadastradas no intervalo: ${intervalo.length}<br>
+            Média das idades do intervalo: ${media.toFixed(1)}`
+            div_resumo2.innerHTML = `
+            Inicial: ${inicial}<br> 
+            Final: ${final}<br>
+            <b>Resumo do intervalo de ocorrências</b><br>
+            Menor Idade do intervalo: ${maior}<br>
+            Maior Idade do intervalo: ${menor}<br>
+            Qtde de idades cadastradas no intervalo: ${intervalo.length}<br>
+            Média das idades do intervalo: ${media.toFixed(1)} <br>
+            Primeira ocorrência que atendeu o intervalo: ${intervalo[0]}<br>
+            Última ocorrência que atendeu o intervalo: ${intervalo[intervalo.length - 1]} `
+
+            for (cont = 0; cont <= intervalo.length - 1; cont++) {
+                div_ocorrencia.innerHTML = `${intervalo} `
+            }
+        }
+    }
+
+
+</script>
