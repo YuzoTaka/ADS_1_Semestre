@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC3_1CCO</title>
+</head>
+
+<body>
+    <h2>Manoel Combustíveis</h2>
+    Entre com a quantidade de Anidro na gasolina: <input id="ipt_temp">
+    <button onclick="cadastrar()">Registrar</button> <br><br>
+
+    Entre com o número de uma ocorrência: <input id="ipt_ocor">
+    <button onclick="verificar()">Verificar</button> <br>
+    <div id="div_ocor"></div><br><br>
+
+    Intervalo de ocorrências para análise
+    <input id="ipt_ocor_de"> <input id="ipt_ocor_ate">
+    <button onclick="ocorrencias()">Analisar Ocorrências</button> <br>
+    <div id="div_msg"></div>
+
+</body>
+
+</html>
+
+<script>
+    var validacao1 = false;
+    var validacao2 = false;
+
+    var ocor = 0;
+    var inicio = 0;
+    var fim = 0;
+    var soma = 0;
+    var media = 0;
+    var menor = 0;
+    var maior = 99;
+
+    vt_qtde = [];
+    intervalo = [];
+
+    function cadastrar() {
+        var anidro = Number(ipt_temp.value);
+        if (anidro == '') {
+            alert(`Digite algum valor`)
+        }
+        else if (anidro < 20) {
+            alert(`Tem algo errado com essa gasolina!!!`)
+            validacao1 = false;
+        } else if (anidro > 27) {
+            alert(`Interromper o processo, gasolina batizada!!!`)
+            validacao1 = false;
+        } else if (anidro >= 22 && anidro <= 24) {
+            alert(`Perfeito!!! Essa é a quantidade ideal!!!`)
+            vt_qtde.push(anidro)
+            validacao1 = true;
+        } else {
+            validacao1 = true;
+            vt_qtde.push(anidro)
+        }
+    }
+
+    function verificar() {
+        var ocor = Number(ipt_ocor.value);
+        div_ocor.innerHTML = ``
+        if (vt_qtde[ocor] == undefined) {
+            div_ocor.innerHTML = `A ocorrência ${ocor} não foi registrada`
+        }
+        if (vt_qtde.length >= ocor) {
+            div_ocor.innerHTML = `Na ocorrência ${ocor} a quantidade de Anidro registrada é ${vt_qtde[ocor - 1]}`
+        }
+        if (ocor <= 0) {
+            div_ocor.innerHTML = `Ocorrência inválida`
+        }
+    }
+
+    function ocorrencias() {
+        inicio = Number(ipt_ocor_de.value);
+        fim = Number(ipt_ocor_ate.value);
+        div_msg.innerHTML = ``
+
+        if (vt_qtde.length == 0) {
+            alert(`Antes de Analisar faça o cadastro das quantidades de Anidro`)
+            validacao2 = false;
+        } else if (inicio >= fim) {
+            alert(`Digite um intervalo válido`);
+            validacao2 = false;
+        } else if (inicio < 0) {
+            alert(`Digite um intervalo inicial maior que 0`)
+            validacao2 = false;
+        } else {
+            validacao2 = true;
+
+        }
+
+        if (validacao2) {
+            for (n = inicio; n <= fim; n++) {
+                intervalo.push(vt_qtde[n - 1])
+
+            }
+
+            for (i = 0; i < intervalo.length; i++) {
+                if (intervalo[i] < maior) {
+                    maior = intervalo[i];
+                }
+                if (intervalo[i] > menor) {
+                    menor = intervalo[i];
+                }
+                soma += intervalo[i];
+                media = soma / intervalo.length;
+            }
+                for (cont = 1; cont <= intervalo.length; cont++) {
+                    div_msg.innerHTML += `A ${cont}ª ocorrência tem registrada a quantidade de Anidro de: ${intervalo[cont - 1]}.<br>`
+                }
+                div_msg.innerHTML += `
+                <b>Resumo do intervalo de ocorrências</b><br>
+                Inicial: ${inicio} Final: ${fim}<br>
+                Menor Quantidade do intervalo: ${maior}<br>
+                Maior Quantidade do intervalo: ${menor}<br>
+                Média das Quantidades do intervalo: ${media.toFixed(1)}`
+            }
+
+    }
+</script>
